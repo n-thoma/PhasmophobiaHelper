@@ -1,0 +1,196 @@
+{
+    "ghosts": [
+        {
+            "name": "Spirit",
+            "evidence": ["EMF Level 5", "Spirit Box", "Ghost Writing"],
+            "strengths": "No strength.",
+            "weaknesses": "Incense is more effective, preventing a hunt for longer.",
+            "game_description": "Spirits are very common ghosts. They are very powerful, but passive, only attacking when they need to. They defend their place of death to the utmost degree, killing anyone that is caught overstaying their welcome.",
+            "notes": ""
+        },
+        {
+            "name": "Wraith",
+            "evidence": ["EMF Level 5", "Spirit Box", "D.O.T.S. Projector"],
+            "strengths": "Cannot be tracked by footsteps. Will occasionally teleport to a random player.",
+            "weaknesses": "Will not step in salt.",
+            "game_description": "Wraiths are one of the most dangerous ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
+            "notes": ""
+        },
+        {
+            "name": "Phantom",
+            "evidence": ["Spirit Box", "Ultraviolet", "D.O.T.S. Projector"],
+            "strengths": "Looking at a Phantom will lower the player's sanity considerably. Will occasionally walk to a random player.",
+            "weaknesses": "Taking a photo of the Phantom will cause it to briefly disappear. Less visible during hunts.",
+            "game_description": "A Phantom is a ghost that can possess the living, inducing fear into those around it. They are most commonly summoned from Ouija Boards.",
+            "notes": ""
+        },
+        {
+            "name": "Poltergeist",
+            "evidence": ["Spirit Box", "Ultraviolet", "Ghost Writing"],
+            "strengths": "Capable of throwing multiple objects at once. Can throw objects at high velocities.",
+            "weaknesses": "Becomes powerless with no throwables nearby.",
+            "game_description": "One of the most famous ghosts, the Poltergeist. Known to manipulate objects around it to spread fear into its victims.",
+            "notes": ""
+        },
+        {
+            "name": "Banshee",
+            "evidence": ["Ghost Orbs", "Freezing Temperatures", "D.O.T.S. Projector"],
+            "strengths": "Will target only one player at a time Increased chance of performing a singing ghost event.",
+            "weaknesses": "Has a distinctive wail on the Parabolic Microphone.",
+            "game_description": "The singing siren, known for attracting its victims through song. It has been known to single out its prey before making a killing blow.",
+            "notes": ""
+        },
+        {
+            "name": "Jinn",
+            "evidence": ["EMF Level 5", "Freezing Temperatures", "Ultraviolet"],
+            "strengths": "Travels at a faster speed if a distant player is in line of sight while the fuse box is on.",
+            "weaknesses": "Cannot use its ability if the fuse box is off. Will never turn the fuse box off directly.",
+            "game_description": "A Jinn is a territorial ghost that will attack when threatened. It has also been known to be able to travel at significant speed.",
+            "notes": ""
+        },
+        {
+            "name": "Mare",
+            "evidence": ["Ghost Orbs", "Spirit Box", "Ghost Writing"],
+            "strengths": "Has an increased chance to attack in the dark.",
+            "weaknesses": "Turning the lights on will reduce the chance of an attack. Will occasionally turn lights off right away. Will never turn a light on.",
+            "game_description": "A Mare is the source of all nightmares, making it most powerful in the dark.",
+            "notes": ""
+        },
+        {
+            "name": "Revenant",
+            "evidence": ["Ghost Orbs", "Freezing Temperatures", "Ghost Writing"],
+            "strengths": "Moves significantly faster if the player location is known during a hunt.",
+            "weaknesses": "Moves very slowly when not chasing a player.",
+            "game_description": "A Revenant is a violent ghost that will attack indiscriminately. Their speed can be deceiving, as they are slow while dormant; however, as soon as they hunt they can move incredibly fast.",
+            "notes": ""
+        },
+        {
+            "name": "Shade",
+            "evidence": ["EMF Level 5", "Freezing Temperatures", "Ghost Writing"],
+            "strengths": "Less likely to perform interactions.",
+            "weaknesses": "Cannot hunt if people are nearby.",
+            "game_description": "A Shade is known to be very shy. There is evidence to suggest that a Shade will stop all paranormal activity if there are people nearby.",
+            "notes": ""
+        },
+        {
+            "name": "Demon",
+            "evidence": ["Freezing Temperatures", "Ultraviolet", "Ghost Writing"],
+            "strengths": "Can initiate hunts more often. Can hunt at max sanity.",
+            "weaknesses": "Crucifix range is 50% larger than placement range indicator.",
+            "game_description": "A Demon is one of the worst ghosts you can encounter. It has been known to attack without reason.",
+            "notes": ""
+        },
+        {
+            "name": "Yurei",
+            "evidence": ["Ghost Orbs", "Freezing Temperatures", "D.O.T.S. Projector"],
+            "strengths": "Has a stronger effect on sanity.",
+            "weaknesses": "Smudging the Yurei will temporarily trap it and reduce how often it wanders. Using its ability causes it to shut doors.",
+            "game_description": "A Yurei is a ghost that has returned to the physical world, usually for the purpose of revenge or hatred.",
+            "notes": ""
+        },
+        {
+            "name": "Oni",
+            "evidence": ["EMF Level 5", "Freezing Temperatures", "D.O.T.S. Projector"],
+            "strengths": "Increased activity when players are nearby.",
+            "weaknesses": "More visible during hunts. Cannot perform the airball ghost event.",
+            "game_description": "Onis love to scare their victims as much as possible before attacking. They are often seen in their physical form, guarding their place of death.",
+            "notes": ""
+        },
+        {
+            "name": "Hantu",
+            "evidence": ["Ghost Orbs", "Freezing Temperatures", "Ultraviolet"],
+            "strengths": "Lower temperatures allow the Hantu to move faster.",
+            "weaknesses": "Warmer areas slow the Hantu's movement. Will produce freezing breath during a hunt if the fuse box is off. Will never turn the fuse box on.",
+            "game_description": "A Hantu is a rare ghost that thrives in the coldest climates. The cold seems to make them more aggressive and empowered.",
+            "notes": ""
+        },
+        {
+            "name": "Yokai",
+            "evidence": ["Ghost Orbs", "Spirit Box", "D.O.T.S. Projector"],
+            "strengths": "Talking near the Yokai will anger it, increasing the chance to attack.",
+            "weaknesses": "Can only hear voices close to it during a hunt.",
+            "game_description": "Yokai are common ghosts that are attracted to human voices. They can usually be found haunting family homes.",
+            "notes": ""
+        },
+        {
+            "name": "Goryo",
+            "evidence": ["EMF Level 5", "Ultraviolet", "D.O.T.S. Projector"],
+            "strengths": "Can only enter a D.O.T.S. state when nobody is nearby. Its D.O.T.S. silhouette can only be seen through a Video Camera.",
+            "weaknesses": "Cannot wander far from its room, or change favorite rooms.",
+            "game_description": "When a Goryo passes through a DOTS projector, using a video camera is the only way to see it.",
+            "notes": ""
+        },
+        {
+            "name": "Myling",
+            "evidence": ["EMF Level 5", "Ultraviolet", "Ghost Writing"],
+            "strengths": "Produces quieter sounds during a hunt.",
+            "weaknesses": "Produces paranormal sounds more frequently on the Parabolic Microphone.",
+            "game_description": "A Myling is a very vocal and active ghost. They are rumoured to be quiet when hunting their prey.",
+            "notes": ""
+        },
+        {
+            "name": "Onryo",
+            "evidence": ["Ghost Orbs", "Spirit Box", "Freezing Temperatures"],
+            "strengths": "A flame extinguishing can cause an Onryo to attack.",
+            "weaknesses": "The presence of flames reduces the Onryo's ability to attack.",
+            "game_description": "The Onryo is often referred to as The Wrathful Spirit. It steals souls from dying victims' bodies to seek revenge. This ghost has been known to fear any form of fire, and will do anything to be far from it.",
+            "notes": ""
+        },
+        {
+            "name": "Twins",
+            "evidence": ["EMF Level 5", "Spirit Box", "Freezing Temperatures"],
+            "strengths": "Either twin may start a hunt, though not at the same time. One twin is slow, the other is fast.",
+            "weaknesses": "Will often interact with the environment at the same time but usually in different places.",
+            "game_description": "These ghosts have been reported to mimic each other's actions. They alternate their attacks to confuse their prey.",
+            "notes": ""
+        },
+        {
+            "name": "Raiju",
+            "evidence": ["EMF Level 5", "Ghost Orbs", "D.O.T.S. Projector"],
+            "strengths": "Moves faster near active electronic equipment.",
+            "weaknesses": "Disrupts electronic equipment from further away when it hunts.",
+            "game_description": "A Raiju is a demon that thrives on electrical current. While generally calm, they can become agitated when overwhelmed with power.",
+            "notes": ""
+        },
+        {
+            "name": "Obake",
+            "evidence": ["EMF Level 5", "Ghost Orbs", "Ultraviolet"],
+            "strengths": "Has a chance to not leave fingerprints when interacting with something. May leave fingerprints that disappear quicker.",
+            "weaknesses": "Has a small chance of leaving special fingerprints. Can quickly shapeshift into another model during a hunt.",
+            "game_description": "Obake are terrifying shape-shifters, capable of taking on many forms. They have been seen taking on humanoid shapes to attract their prey.",
+            "notes": ""
+        },
+        {
+            "name": "The Mimic",
+            "evidence": ["Spirit Box", "Freezing Temperatures", "Ultraviolet"],
+            "strengths": "Can mimic the abilities and traits of other ghosts.",
+            "weaknesses": "Will present fake Ghost Orbs as secondary evidence.",
+            "game_description": "The Mimic is an elusive, mysterious, copycat ghost that mirrors traits and behaviours from others, including other ghost types.",
+            "notes": ""
+        },
+        {
+            "name": "Moroi",
+            "evidence": ["Spirit Box", "Freezing Temperatures", "Ghost Writing"],
+            "strengths": "Moves noticeably faster at low player sanity. Can curse players, making them lose sanity quicker than usual while in the investigation zone.",
+            "weaknesses": "Incense blinds the ghost for 50% longer during hunts.",
+            "game_description": "Moroi have risen from the grave to drain energy from the living. They have been known to place curses on their victims, curable only by antidotes or moving very far away.",
+            "notes": ""
+        },
+        {
+            "name": "Deogen",
+            "evidence": ["Spirit Box", "Ghost Writing", "D.O.T.S. Projector"],
+            "strengths": "Always knows where the player is during a hunt and moves very fast when going to their location.",
+            "weaknesses": "Moves very slowly when near its victim.",
+            "game_description": "Sometimes surrounded by an endless fog, Deogen have been eluding ghost hunters for years. These ghosts have been reported to find even the most hidden prey, before stalking them into exhaustion.",
+            "notes": ""
+        },
+        {
+            "name": "Thaye",
+            "evidence": ["Ghost Orbs", "Ghost Writing", "D.O.T.S. Projector"],
+            "strengths": "Much more active, aggressive and faster during hunts as soon as a player enters the location.",
+            "weaknesses": "Becomes slower and less active over time.",
+            "game_description": "Thaye have been known to rapidly age over time, even in the afterlife. From what we've learned, they seem to deteriorate faster while within the presence of the living.",
+            "notes": ""
+        }
+    ]
+}
