@@ -80,15 +80,22 @@ thread = client.beta.threads.create()
 
 # Open ghost_data.json for read
 with open("ghost_data.json", "r") as file:
-    ghost_data = json.load(file)
+    data = json.load(file)
 
 
 # Gets ghost json data from given name
 def get_ghost_data(ghost_name):
-    for ghost in ghost_data["ghosts"]:
+    for ghost in data["ghosts"]:
         if ghost["name"].lower() == ghost_name.lower():
             return ghost
 
+
+# Gets evidence json data from the given name
+def get_evidence_data(evidence_name):
+    for evidence in data["evidences"]:
+        if evidence["name"].lower() == evidence_name.lower():
+            return evidence
+        
 
 # EventHandler class to define how to handle the events in the response stream.
 class EventHandler(AssistantEventHandler):    

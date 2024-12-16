@@ -2,7 +2,11 @@
     "ghosts": [
         {
             "name": "Spirit",
-            "evidence": ["EMF Level 5", "Spirit Box", "Ghost Writing"],
+            "evidence": [
+                "EMF Level 5",
+                "Spirit Box",
+                "Ghost Writing"
+            ],
             "strengths": "No strength.",
             "weaknesses": "Incense is more effective, preventing a hunt for longer.",
             "game_description": "Spirits are very common ghosts. They are very powerful, but passive, only attacking when they need to. They defend their place of death to the utmost degree, killing anyone that is caught overstaying their welcome.",
@@ -10,7 +14,11 @@
         },
         {
             "name": "Wraith",
-            "evidence": ["EMF Level 5", "Spirit Box", "D.O.T.S. Projector"],
+            "evidence": [
+                "EMF Level 5",
+                "Spirit Box",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Cannot be tracked by footsteps. Will occasionally teleport to a random player.",
             "weaknesses": "Will not step in salt.",
             "game_description": "Wraiths are one of the most dangerous ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
@@ -18,7 +26,11 @@
         },
         {
             "name": "Phantom",
-            "evidence": ["Spirit Box", "Ultraviolet", "D.O.T.S. Projector"],
+            "evidence": [
+                "Spirit Box",
+                "Ultraviolet",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Looking at a Phantom will lower the player's sanity considerably. Will occasionally walk to a random player.",
             "weaknesses": "Taking a photo of the Phantom will cause it to briefly disappear. Less visible during hunts.",
             "game_description": "A Phantom is a ghost that can possess the living, inducing fear into those around it. They are most commonly summoned from Ouija Boards.",
@@ -26,7 +38,11 @@
         },
         {
             "name": "Poltergeist",
-            "evidence": ["Spirit Box", "Ultraviolet", "Ghost Writing"],
+            "evidence": [
+                "Spirit Box",
+                "Ultraviolet",
+                "Ghost Writing"
+            ],
             "strengths": "Capable of throwing multiple objects at once. Can throw objects at high velocities.",
             "weaknesses": "Becomes powerless with no throwables nearby.",
             "game_description": "One of the most famous ghosts, the Poltergeist. Known to manipulate objects around it to spread fear into its victims.",
@@ -34,7 +50,11 @@
         },
         {
             "name": "Banshee",
-            "evidence": ["Ghost Orbs", "Freezing Temperatures", "D.O.T.S. Projector"],
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Will target only one player at a time Increased chance of performing a singing ghost event.",
             "weaknesses": "Has a distinctive wail on the Parabolic Microphone.",
             "game_description": "The singing siren, known for attracting its victims through song. It has been known to single out its prey before making a killing blow.",
@@ -42,7 +62,11 @@
         },
         {
             "name": "Jinn",
-            "evidence": ["EMF Level 5", "Freezing Temperatures", "Ultraviolet"],
+            "evidence": [
+                "EMF Level 5",
+                "Freezing Temperatures",
+                "Ultraviolet"
+            ],
             "strengths": "Travels at a faster speed if a distant player is in line of sight while the fuse box is on.",
             "weaknesses": "Cannot use its ability if the fuse box is off. Will never turn the fuse box off directly.",
             "game_description": "A Jinn is a territorial ghost that will attack when threatened. It has also been known to be able to travel at significant speed.",
@@ -50,7 +74,11 @@
         },
         {
             "name": "Mare",
-            "evidence": ["Ghost Orbs", "Spirit Box", "Ghost Writing"],
+            "evidence": [
+                "Ghost Orbs",
+                "Spirit Box",
+                "Ghost Writing"
+            ],
             "strengths": "Has an increased chance to attack in the dark.",
             "weaknesses": "Turning the lights on will reduce the chance of an attack. Will occasionally turn lights off right away. Will never turn a light on.",
             "game_description": "A Mare is the source of all nightmares, making it most powerful in the dark.",
@@ -58,7 +86,11 @@
         },
         {
             "name": "Revenant",
-            "evidence": ["Ghost Orbs", "Freezing Temperatures", "Ghost Writing"],
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "Ghost Writing"
+            ],
             "strengths": "Moves significantly faster if the player location is known during a hunt.",
             "weaknesses": "Moves very slowly when not chasing a player.",
             "game_description": "A Revenant is a violent ghost that will attack indiscriminately. Their speed can be deceiving, as they are slow while dormant; however, as soon as they hunt they can move incredibly fast.",
@@ -66,7 +98,11 @@
         },
         {
             "name": "Shade",
-            "evidence": ["EMF Level 5", "Freezing Temperatures", "Ghost Writing"],
+            "evidence": [
+                "EMF Level 5",
+                "Freezing Temperatures",
+                "Ghost Writing"
+            ],
             "strengths": "Less likely to perform interactions.",
             "weaknesses": "Cannot hunt if people are nearby.",
             "game_description": "A Shade is known to be very shy. There is evidence to suggest that a Shade will stop all paranormal activity if there are people nearby.",
@@ -74,7 +110,11 @@
         },
         {
             "name": "Demon",
-            "evidence": ["Freezing Temperatures", "Ultraviolet", "Ghost Writing"],
+            "evidence": [
+                "Freezing Temperatures",
+                "Ultraviolet",
+                "Ghost Writing"
+            ],
             "strengths": "Can initiate hunts more often. Can hunt at max sanity.",
             "weaknesses": "Crucifix range is 50% larger than placement range indicator.",
             "game_description": "A Demon is one of the worst ghosts you can encounter. It has been known to attack without reason.",
@@ -82,7 +122,11 @@
         },
         {
             "name": "Yurei",
-            "evidence": ["Ghost Orbs", "Freezing Temperatures", "D.O.T.S. Projector"],
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Has a stronger effect on sanity.",
             "weaknesses": "Smudging the Yurei will temporarily trap it and reduce how often it wanders. Using its ability causes it to shut doors.",
             "game_description": "A Yurei is a ghost that has returned to the physical world, usually for the purpose of revenge or hatred.",
@@ -90,7 +134,11 @@
         },
         {
             "name": "Oni",
-            "evidence": ["EMF Level 5", "Freezing Temperatures", "D.O.T.S. Projector"],
+            "evidence": [
+                "EMF Level 5",
+                "Freezing Temperatures",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Increased activity when players are nearby.",
             "weaknesses": "More visible during hunts. Cannot perform the airball ghost event.",
             "game_description": "Onis love to scare their victims as much as possible before attacking. They are often seen in their physical form, guarding their place of death.",
@@ -98,7 +146,11 @@
         },
         {
             "name": "Hantu",
-            "evidence": ["Ghost Orbs", "Freezing Temperatures", "Ultraviolet"],
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "Ultraviolet"
+            ],
             "strengths": "Lower temperatures allow the Hantu to move faster.",
             "weaknesses": "Warmer areas slow the Hantu's movement. Will produce freezing breath during a hunt if the fuse box is off. Will never turn the fuse box on.",
             "game_description": "A Hantu is a rare ghost that thrives in the coldest climates. The cold seems to make them more aggressive and empowered.",
@@ -106,7 +158,11 @@
         },
         {
             "name": "Yokai",
-            "evidence": ["Ghost Orbs", "Spirit Box", "D.O.T.S. Projector"],
+            "evidence": [
+                "Ghost Orbs",
+                "Spirit Box",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Talking near the Yokai will anger it, increasing the chance to attack.",
             "weaknesses": "Can only hear voices close to it during a hunt.",
             "game_description": "Yokai are common ghosts that are attracted to human voices. They can usually be found haunting family homes.",
@@ -114,7 +170,11 @@
         },
         {
             "name": "Goryo",
-            "evidence": ["EMF Level 5", "Ultraviolet", "D.O.T.S. Projector"],
+            "evidence": [
+                "EMF Level 5",
+                "Ultraviolet",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Can only enter a D.O.T.S. state when nobody is nearby. Its D.O.T.S. silhouette can only be seen through a Video Camera.",
             "weaknesses": "Cannot wander far from its room, or change favorite rooms.",
             "game_description": "When a Goryo passes through a DOTS projector, using a video camera is the only way to see it.",
@@ -122,7 +182,11 @@
         },
         {
             "name": "Myling",
-            "evidence": ["EMF Level 5", "Ultraviolet", "Ghost Writing"],
+            "evidence": [
+                "EMF Level 5",
+                "Ultraviolet",
+                "Ghost Writing"
+            ],
             "strengths": "Produces quieter sounds during a hunt.",
             "weaknesses": "Produces paranormal sounds more frequently on the Parabolic Microphone.",
             "game_description": "A Myling is a very vocal and active ghost. They are rumoured to be quiet when hunting their prey.",
@@ -130,7 +194,11 @@
         },
         {
             "name": "Onryo",
-            "evidence": ["Ghost Orbs", "Spirit Box", "Freezing Temperatures"],
+            "evidence": [
+                "Ghost Orbs",
+                "Spirit Box",
+                "Freezing Temperatures"
+            ],
             "strengths": "A flame extinguishing can cause an Onryo to attack.",
             "weaknesses": "The presence of flames reduces the Onryo's ability to attack.",
             "game_description": "The Onryo is often referred to as The Wrathful Spirit. It steals souls from dying victims' bodies to seek revenge. This ghost has been known to fear any form of fire, and will do anything to be far from it.",
@@ -138,7 +206,11 @@
         },
         {
             "name": "Twins",
-            "evidence": ["EMF Level 5", "Spirit Box", "Freezing Temperatures"],
+            "evidence": [
+                "EMF Level 5",
+                "Spirit Box",
+                "Freezing Temperatures"
+            ],
             "strengths": "Either twin may start a hunt, though not at the same time. One twin is slow, the other is fast.",
             "weaknesses": "Will often interact with the environment at the same time but usually in different places.",
             "game_description": "These ghosts have been reported to mimic each other's actions. They alternate their attacks to confuse their prey.",
@@ -146,7 +218,11 @@
         },
         {
             "name": "Raiju",
-            "evidence": ["EMF Level 5", "Ghost Orbs", "D.O.T.S. Projector"],
+            "evidence": [
+                "EMF Level 5",
+                "Ghost Orbs",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Moves faster near active electronic equipment.",
             "weaknesses": "Disrupts electronic equipment from further away when it hunts.",
             "game_description": "A Raiju is a demon that thrives on electrical current. While generally calm, they can become agitated when overwhelmed with power.",
@@ -154,7 +230,11 @@
         },
         {
             "name": "Obake",
-            "evidence": ["EMF Level 5", "Ghost Orbs", "Ultraviolet"],
+            "evidence": [
+                "EMF Level 5",
+                "Ghost Orbs",
+                "Ultraviolet"
+            ],
             "strengths": "Has a chance to not leave fingerprints when interacting with something. May leave fingerprints that disappear quicker.",
             "weaknesses": "Has a small chance of leaving special fingerprints. Can quickly shapeshift into another model during a hunt.",
             "game_description": "Obake are terrifying shape-shifters, capable of taking on many forms. They have been seen taking on humanoid shapes to attract their prey.",
@@ -162,7 +242,11 @@
         },
         {
             "name": "The Mimic",
-            "evidence": ["Spirit Box", "Freezing Temperatures", "Ultraviolet"],
+            "evidence": [
+                "Spirit Box",
+                "Freezing Temperatures",
+                "Ultraviolet"
+            ],
             "strengths": "Can mimic the abilities and traits of other ghosts.",
             "weaknesses": "Will present fake Ghost Orbs as secondary evidence.",
             "game_description": "The Mimic is an elusive, mysterious, copycat ghost that mirrors traits and behaviours from others, including other ghost types.",
@@ -170,7 +254,11 @@
         },
         {
             "name": "Moroi",
-            "evidence": ["Spirit Box", "Freezing Temperatures", "Ghost Writing"],
+            "evidence": [
+                "Spirit Box",
+                "Freezing Temperatures",
+                "Ghost Writing"
+            ],
             "strengths": "Moves noticeably faster at low player sanity. Can curse players, making them lose sanity quicker than usual while in the investigation zone.",
             "weaknesses": "Incense blinds the ghost for 50% longer during hunts.",
             "game_description": "Moroi have risen from the grave to drain energy from the living. They have been known to place curses on their victims, curable only by antidotes or moving very far away.",
@@ -178,7 +266,11 @@
         },
         {
             "name": "Deogen",
-            "evidence": ["Spirit Box", "Ghost Writing", "D.O.T.S. Projector"],
+            "evidence": [
+                "Spirit Box",
+                "Ghost Writing",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Always knows where the player is during a hunt and moves very fast when going to their location.",
             "weaknesses": "Moves very slowly when near its victim.",
             "game_description": "Sometimes surrounded by an endless fog, Deogen have been eluding ghost hunters for years. These ghosts have been reported to find even the most hidden prey, before stalking them into exhaustion.",
@@ -186,10 +278,197 @@
         },
         {
             "name": "Thaye",
-            "evidence": ["Ghost Orbs", "Ghost Writing", "D.O.T.S. Projector"],
+            "evidence": [
+                "Ghost Orbs",
+                "Ghost Writing",
+                "D.O.T.S. Projector"
+            ],
             "strengths": "Much more active, aggressive and faster during hunts as soon as a player enters the location.",
             "weaknesses": "Becomes slower and less active over time.",
             "game_description": "Thaye have been known to rapidly age over time, even in the afterlife. From what we've learned, they seem to deteriorate faster while within the presence of the living.",
+            "notes": ""
+        }
+    ],
+    "evidences": [
+        {
+            "name": "D.O.T.S. Projector",
+            "ghosts_proven_with": [
+                "Banshee",
+                "Degoen",
+                "Goryo",
+                "Oni",
+                "Phantom",
+                "Raiju",
+                "Thaye",
+                "Wraith",
+                "Yokai",
+                "Yurei"
+            ],
+            "game_description": "A laser grid of light that can reveal the silhouette of the ghost.",
+            "wiki_description": "D.O.T.S Projector is a type of evidence in Phasmophobia, used to determine which ghost is haunting a location. It is detected by placing a D.O.T.S Projector in close proximity of a ghost, and allowing it to pass through it.",
+            "notes": [
+                {
+                    "title": "Mechanics",
+                    "description": "Ghosts with D.O.T.S evidence will occasionally enter a 'D.O.T.S state'. During this, a faint silhouette of the ghost will be visible only when it passes through the laser grid. The ghost will also walk towards the nearest player if there is one in the same room, or towards a random waypoint if no players are nearby. While these silhouettes are visible to the naked eye (unless the ghost is a Goryo), a video camera with night vision may allow for better visibility. This also means that D.O.T.S can be tracked simultaneously alongside Ghost Orbs. Dead players cannot see the D.O.T.S state by any means."
+                },
+                {
+                    "title": "Banshee",
+                    "description": "The Banshee will try to walk towards its targeted player, even if another player is closer to it."
+                },
+                {
+                    "title": "Goryo",
+                    "description": "If the ghost is a Goryo, the silhouette will not be visible to the naked eye and can only be seen when the following two conditions are fulfilled: 1) There are no players in the same room as the Goryo when it enters a D.O.T.S state. 2) The D.O.T.S silhouette must be viewed with a video camera."
+                },
+                {
+                    "title": "Phantom",
+                    "description": "The Phantom will physically disappear if a picture of it is taken while in a D.O.T.S state."
+                },
+                {
+                    "title": "Photo Rewards",
+                    "description": "The D.O.T.S silhouette can be photographed and will show up as Ghost, rewarding up to $20 and 20 XP depending on the photo distance. This photo will complete the 'Capture a photo of the Ghost' objective without needing a Ghost Event to occur."
+                }
+            ]
+        },
+        {
+            "name": "Ghost Writing",
+            "ghosts_proven_with": [
+                "Demon",
+                "Deogen",
+                "Mare",
+                "Moroi",
+                "Myling",
+                "Poltergeist",
+                "Revenant",
+                "Shade",
+                "Spirit",
+                "Thaye"
+            ],
+            "game_description": "Some Ghosts are able to write inside of books if given the proper tools to do so.",
+            "wiki_description": "Ghost Writing is a piece of evidence used to determine which ghost is haunting a location. It can be obtained by using a Ghost Writing Book with an applicable ghost.",
+            "notes": [
+                {
+                    "title": "Mechanics",
+                    "description": "If Ghost Writing is a piece of evidence, if the ghost chooses to interact with an opened Ghost Writing Book, the book will rise and frantic scribbling will be visible. Ghost Writing cannot be given if the Ghost Writing Book is closed and/or the ghost is outside of its range. If the ghost writes in the book, an EMF Level 2 reading will be created (25% chance of being an EMF Level 5 reading instead if the ghost has EMF Level 5 as evidence). There are several different types of Ghost Writing that a ghost can put in the book, with the tier I and tier III books both having three, and the tier II book having six. Each has an equal chance of occurring and the type of writing does not narrow down the type of ghost any more than the fact that the ghost writes in the book at all. Each book may contain different types of writing."
+                },
+                {
+                    "title": "Photo Rewards",
+                    "description": "Taking a photo of the Ghost Writing Book after it has been written in will yield a photo labelled as Ghost Writing, and reward up to $5 and 5XP, depending on the distance it was taken from. A photo labelled as Interaction, awarding up to $5 and 5XP, can be taken as well within 20 seconds of the book being written in. A Ghost Writing photo can only be obtained once per book, but interaction photos can be obtained separately if the ghost throws the book, regardless of whether the book has writing or not."
+                },
+                {
+                    "title": "Tips",
+                    "description": "If a ghost throws a Ghost Writing Book, then it does not have Ghost Writing as evidence (or is hiding it on Nightmare difficulty or higher)."
+                }
+            ]
+        },
+        {
+            "name": "EMF Level 5",
+            "ghosts_proven_with": [
+                "Goryo",
+                "Jinn",
+                "Myling",
+                "Obake",
+                "Oni",
+                "Raiju",
+                "Shade",
+                "Spirit",
+                "The Twins",
+                "Wraith"
+            ],
+            "game_description": "Some Ghosts leave Electro Magnetic Fields (EMF) when they interact with things. Look out for extra strong readings that reach level 5.",
+            "wiki_description": "EMF Level 5 (or EMF 5) is a piece of evidence used to determine the type of ghost haunting the location.",
+            "notes": [
+                {
+                    "title": "Mechanics",
+                    "description": "When a ghost with EMF Level 5 as one of its evidences interacts with the environment, the EMF reading will have a 25% chance to be an EMF 5 emission instead of EMF 2 or EMF 3, which can be detected and confirmed with an EMF Reader."
+                },
+                {
+                    "title": "EMF from the Site Activity Monitor",
+                    "description": "EMF level 5 can possibly be obtained from the site activity monitor by observing an activity increase or decrease of 4 or 5 levels, although this does not gaurantee EMF 5 evidence. As the site activity monitor is an approximate representation of the total EMF currently present in the map, seeing multiple straight-line jumps of 4 and 5 levels is a likely indication of EMF 5, especially if no players are currently inside the investigation area. However, the reading given by the Site Activity Monitor is obfuscated a bit, and will randomly 'subtract' 1 or 2 from the emission that is then read out on the monitor; an increase or decrease of 3 levels may represent an EMF 5 emission, but should not be used as a hard indicator, as this jump is just as likely to represent an EMF 3 interaction. Note that some occurrences may also show up as jumps of 4 or 5 levels; avoid erroneously taking these to represent EMF 5: 1) A ghost event 2) The Poltergeist's multi-throw ability 3) Using the Voodoo Doll or Tarot Cards, resulting in two interactions occuring within the same second 4) A hunt ending, causing a jump from level 10 to a level 5/6 5) In general, interactions occuring very close to each-other"
+                }
+            ]
+        },
+        {
+            "name": "Ghost Orbs",
+            "ghosts_proven_with": [
+                "Banshee",
+                "Hantu",
+                "Mare",
+                "Obake",
+                "Onryo",
+                "Raiju",
+                "Revenant",
+                "Thaye",
+                "Yokai",
+                "Yurei"
+            ],
+            "game_description": "Small floating orbs of light, only visible through a camera.",
+            "wiki_description": "Ghost Orbs are a type of evidence used to help determine the type of ghost haunting the location.",
+            "notes": [
+                {
+                    "title": "Mechanics",
+                    "description": "When a map is loaded in, Ghost Orbs will spawn in the favourite room and float within the room. They look like very small orbs that glide across the screen, generally one at a time. They can be seen through the screen on a Video Camera with night vision, or through any available video feed with night vision, but not through night vision goggles (Tier III Head Gear). Depending on the map and the location of the favourite room, Ghost Orbs can sometimes be seen via the map's CCTVs if the CCTV happens to be facing into the favourite room, though this is usually rare. Ghost Orbs will periodically shift position within the favourite room, forcing players to be more proactive in locating them. When the ghost room changes on difficulties where 'Changing favourite room' is not set to 'None' (such as on Professional, Nightmare, or Insanity), the Ghost Orbs will also move to the new favourite room."
+                },
+                {
+                    "title": "The Mimic",
+                    "description": "The Mimic induces Ghost Orbs as a 'false flag' evidence. Since its main pieces of evidences are Spirit Box, Ultraviolet, and Freezing Temperatures, Ghost Orbs will be unaffected by the number of evidences set (such as on Custom difficulties or Nightmare difficulty), even when it is set to 0."
+                },
+                {
+                    "title": "Strategies",
+                    "description": "1) Because of the periodical moving of Ghost Orbs, searching for them with a hand-held Video Camera is often better than relying on stationary cameras. In addition, this eliminates back-and-forth trips to the truck, especially on larger maps where sanity preservation is more important. 2) A player in the truck can view their teammates' Tier I head gear during the initial search for the ghost room to search for Ghost Orbs. 3) If viewing the camera feed from the truck, camera placement is key to detecting Ghost Orbs. A good strategy for detecting them is placing two video cameras in the corners of the room facing each other to maximize coverage, or using a Tier 2 or 3 tripod to rotate the camera. 4) Using video cameras to peer through exit doors, garage doors or windows may allow the player to find Ghost Orbs even before entering the investigation area. 5) Ghost Orbs tend to show up in regular intervals. If none are seen for a long time, try moving the video camera or switch to another one. 6) In outdoor areas such as on Maple Lodge Campsite, Ghost Orbs can be hard to see in bad weather conditions (primarily rain, snow, and fog). A hint to distinguishing them from snowflakes is that Ghost Orbs tend to float more horizontally and, sometimes, even upwards (compared to snowflakes always falling down). Additionally, snowflakes are generally dark, while orbs will be bright. 7) It is best to check for Ghost Orbs when the room's lights are off. When on, the brightness may hide the Orbs from sight."
+                }
+            ]
+        },
+        {
+            "name": "Ultraviolet",
+            "ghosts_proven_with": [
+                "Banshee",
+                "Hantu",
+                "Obake",
+                "Demon",
+                "Goryo",
+                "Jinn",
+                "Myling",
+                "Phantom",
+                "Poltergeist",
+                "The Mimic"
+            ],
+            "game_description": "Some Ghosts have been known to leave fingerprints on objects such as doors and light switches, as well as leaving footprints after stepping in Salt. These can be revealed with a UV Light.",
+            "notes": ""
+        },
+        {
+            "name": "Freezing Temperatures",
+            "ghosts_proven_with": [
+                "Hantu",
+                "Demon",
+                "Jinn",
+                "The Mimic",
+                "Onryo",
+                "Revenant",
+                "Yurei",
+                "Moroi",
+                "Oni",
+                "Shade",
+                "The Twins"
+            ],
+            "game_description": "All ghosts make rooms cold, however, some have been known to make the temperature drop extremely fast.",
+            "notes": ""
+        },
+        {
+            "name": "Spirit Box",
+            "ghosts_proven_with": [
+                "The Mimic",
+                "Onryo",
+                "Moroi",
+                "The Twins",
+                "Phantom",
+                "Poltergeist",
+                "Mare",
+                "Yokai",
+                "Deogen",
+                "Spirit",
+                "Wraith"
+            ],
+            "game_description": "Only certain ghosts will talk through a Spirit Box when asked a question with your voice. Make sure the lights are turned off.",
             "notes": ""
         }
     ]
