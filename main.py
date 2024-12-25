@@ -51,24 +51,97 @@ phasmophobia_assistant = client.beta.assistants.create(
     name="Phasmophobia Assistant",
     instructions=str(get_instructions()),
     model=get_gpt_model(),
-    tools=[{
-        "type": "function",
-        "function": {
-            "name": "get_ghost_data",
-            "description": "Gives you, the AI assistant information on a Phasmophobia ghost of your choice.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "ghost_name": {
-                        "type": "string",
-                        "enum": ["Spirit", "Poltergeist", "Mare", "Demon", "Yokai", "Myling", "Raiju", "Moroi", "Wraith", "Banshee", "Revenant", "Yurei", "Hantu", "Onryo", "Obake", "Deogen", "Phantom", "Jinn", "Shade", "Oni", "Goryo", "The Twins", "The Mimic", "Thaye"],
-                        "description": "The ghost you want to learn about."
-                    }
-                },
-                "required": ["ghost_name"]
+    tools=[
+        {
+            "type": "function",
+            "function": {
+                "name": "get_ghost_data",
+                "description": "Gives you, the AI assistant information on a Phasmophobia ghost of your choice.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "ghost_name": {
+                            "type": "string",
+                            "enum": ["Spirit", "Poltergeist", "Mare", "Demon", "Yokai", "Myling", "Raiju", "Moroi", "Wraith", "Banshee", "Revenant", "Yurei", "Hantu", "Onryo", "Obake", "Deogen", "Phantom", "Jinn", "Shade", "Oni", "Goryo", "The Twins", "The Mimic", "Thaye"],
+                            "description": "The ghost you want to learn about."
+                        }
+                    },
+                    "required": ["ghost_name"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "get_evidence_data",
+                "description": "Gives you, the AI assistant information on a Phasmophobia evidence of your choice.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "evidence_name": {
+                            "type": "string",
+                            "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
+                            "description": "The evidence you want to learn about."
+                        }
+                    },
+                    "required": ["evidence_name"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "get_ghosts_from_evidence",
+                "description": "Gives you, the AI assistant a list of ghosts that a given evidence can prove.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "evidence_name": {
+                            "type": "string",
+                            "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
+                            "description": "The evidence name."
+                        }
+                    },
+                    "required": ["evidence_name"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "search_ghosts_from_keyword",
+                "description": "Gives you, the AI assistant a the ability to search for a ghost using a keyword.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "keyword": {
+                            "type": "string",
+                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word."
+                        }
+                    },
+                    "required": ["keyword"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "get_equipment_data",
+                "description": "Gives you, the AI assistant information on a Phasmophobia equipment of your choice.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "equipment_name": {
+                            "type": "string",
+                            "enum": ["Crucifix", "Firelight", "Head Gear", "Igniter", "Incense", "Motion Sensor", "Parabolic Microphone", "Photo Camera", "Salt", "Sanity Medication", "Sound Sensor", "Tripod"],
+                            "description": "The equipment you want to learn about."
+                        }
+                    },
+                    "required": ["equipment_name"]
+                }
             }
         }
-    }] 
+    ] 
 )
 
 # Init thread
@@ -95,6 +168,56 @@ def get_evidence_data(evidence_name):
     for evidence in data["evidences"]:
         if evidence["name"].lower() == evidence_name.lower():
             return evidence
+        
+
+# Gets list of ghosts from given evidence name
+def get_ghosts_from_evidence(evidence_name):
+    for evidence in data["evidences"]:
+        if evidence["name"].lower() == evidence_name.lower():
+            return evidence["ghosts_proven_with"]
+
+
+# Gets information on ghosts given a key word
+def search_ghosts_from_keyword(keyword):
+
+    # Stores all results here
+    results = []
+
+    # Iterates through ghosts
+    for ghost in data["ghosts"]:
+
+        # Searches for keyword in strengths
+        if keyword.lower() in ghost["strengths"].lower():
+            results.append(f"Found {keyword} in {ghost["name"]} in Strengths: {ghost["strengths"]}")
+
+        # Searches for keyword in weaknesses
+        if keyword.lower() in ghost["weaknesses"].lower():
+            results.append(f"Found {keyword} in {ghost["name"]} in Weaknesses: {ghost["weaknesses"]}")
+
+        # Searches for keyword in the game description
+        if keyword.lower() in ghost["game_description"].lower():
+            results.append(f"Found {keyword} in {ghost["name"]} in Game Description: {ghost["game_description"]}")
+
+        # Iterates through notes
+        for note in ghost["notes"]:
+
+            # Searches for keyword in note title
+            if keyword.lower() in note["title"].lower():
+                results.append(f"Found {keyword} in {ghost["name"]} in a Note titled {note["title"]}: {note["description"]}")
+
+            # Searches for keyword in the note body
+            if keyword.lower() in note["description"].lower():
+                results.append(f"Found {keyword} in {ghost["name"]} in a Note titled {note["title"]}: {note["description"]}")
+
+    # Return results
+    return results
+
+
+# Gets equipment json data from the given name
+def get_equipment_data(equipment_data):
+    for equipment in data["equipment"]:
+        if equipment["name"].lower() == equipment_data.lower():
+            return equipment
         
 
 # EventHandler class to define how to handle the events in the response stream.
@@ -124,20 +247,32 @@ class EventHandler(AssistantEventHandler):
 
         # This will be submitted to tool outputs later
         tool_outputs = []
-        
+
         # For all tools that require action
         for tool in data.required_action.submit_tool_outputs.tool_calls:
 
             # Extract args
             args = json.loads(tool.function.arguments)
+            
+            # Where output will be stored
+            output_str = ""
 
-            # If func get_ghost_data is called...
-            #   Call the proper function with the extracted arg.
-            #   Append tool id and output to submit 
+            # Call proper function
             if tool.function.name == "get_ghost_data":
                 output_str = get_ghost_data(args.get("ghost_name"))
-                tool_outputs.append({"tool_call_id": tool.id, "output": str(output_str)})
-        
+            elif tool.function.name == "get_evidence_data":
+                output_str = get_evidence_data(args.get("evidence_name"))
+            elif tool.function.name == "get_ghosts_from_evidence":
+                output_str = get_ghosts_from_evidence(args.get("evidence_name"))
+            elif tool.function.name == "search_ghosts_from_keyword":
+                output_str = search_ghosts_from_keyword(args.get("keyword"))
+
+        print(tool)
+        print(output_str)
+
+        # Append output to tool_outputs arr
+        tool_outputs.append({"tool_call_id": tool.id, "output": str(output_str)})
+
         # Submit all tool_outputs at the same time
         self.submit_tool_outputs(tool_outputs, run_id)
 

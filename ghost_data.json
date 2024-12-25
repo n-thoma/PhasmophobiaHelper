@@ -22,7 +22,12 @@
             "strengths": "Cannot be tracked by footsteps. Will occasionally teleport to a random player.",
             "weaknesses": "Will not step in salt.",
             "game_description": "Wraiths are one of the most dangerous ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
-            "notes": ""
+            "notes": [
+                {
+                    "title": "Love",
+                    "description": "Wraiths love salt so much"
+                }
+            ]
         },
         {
             "name": "Phantom",
@@ -214,7 +219,12 @@
             "strengths": "Either twin may start a hunt, though not at the same time. One twin is slow, the other is fast.",
             "weaknesses": "Will often interact with the environment at the same time but usually in different places.",
             "game_description": "These ghosts have been reported to mimic each other's actions. They alternate their attacks to confuse their prey.",
-            "notes": ""
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
         },
         {
             "name": "Raiju",
@@ -306,11 +316,8 @@
             ],
             "game_description": "A laser grid of light that can reveal the silhouette of the ghost.",
             "wiki_description": "D.O.T.S Projector is a type of evidence in Phasmophobia, used to determine which ghost is haunting a location. It is detected by placing a D.O.T.S Projector in close proximity of a ghost, and allowing it to pass through it.",
+            "mechanics": "Ghosts with D.O.T.S evidence will occasionally enter a 'D.O.T.S state'. During this, a faint silhouette of the ghost will be visible only when it passes through the laser grid. The ghost will also walk towards the nearest player if there is one in the same room, or towards a random waypoint if no players are nearby. While these silhouettes are visible to the naked eye (unless the ghost is a Goryo), a video camera with night vision may allow for better visibility. This also means that D.O.T.S can be tracked simultaneously alongside Ghost Orbs. Dead players cannot see the D.O.T.S state by any means.",
             "notes": [
-                {
-                    "title": "Mechanics",
-                    "description": "Ghosts with D.O.T.S evidence will occasionally enter a 'D.O.T.S state'. During this, a faint silhouette of the ghost will be visible only when it passes through the laser grid. The ghost will also walk towards the nearest player if there is one in the same room, or towards a random waypoint if no players are nearby. While these silhouettes are visible to the naked eye (unless the ghost is a Goryo), a video camera with night vision may allow for better visibility. This also means that D.O.T.S can be tracked simultaneously alongside Ghost Orbs. Dead players cannot see the D.O.T.S state by any means."
-                },
                 {
                     "title": "Banshee",
                     "description": "The Banshee will try to walk towards its targeted player, even if another player is closer to it."
@@ -345,11 +352,8 @@
             ],
             "game_description": "Some Ghosts are able to write inside of books if given the proper tools to do so.",
             "wiki_description": "Ghost Writing is a piece of evidence used to determine which ghost is haunting a location. It can be obtained by using a Ghost Writing Book with an applicable ghost.",
+            "mechanics": "If Ghost Writing is a piece of evidence, if the ghost chooses to interact with an opened Ghost Writing Book, the book will rise and frantic scribbling will be visible. Ghost Writing cannot be given if the Ghost Writing Book is closed and/or the ghost is outside of its range. If the ghost writes in the book, an EMF Level 2 reading will be created (25% chance of being an EMF Level 5 reading instead if the ghost has EMF Level 5 as evidence). There are several different types of Ghost Writing that a ghost can put in the book, with the tier I and tier III books both having three, and the tier II book having six. Each has an equal chance of occurring and the type of writing does not narrow down the type of ghost any more than the fact that the ghost writes in the book at all. Each book may contain different types of writing.",
             "notes": [
-                {
-                    "title": "Mechanics",
-                    "description": "If Ghost Writing is a piece of evidence, if the ghost chooses to interact with an opened Ghost Writing Book, the book will rise and frantic scribbling will be visible. Ghost Writing cannot be given if the Ghost Writing Book is closed and/or the ghost is outside of its range. If the ghost writes in the book, an EMF Level 2 reading will be created (25% chance of being an EMF Level 5 reading instead if the ghost has EMF Level 5 as evidence). There are several different types of Ghost Writing that a ghost can put in the book, with the tier I and tier III books both having three, and the tier II book having six. Each has an equal chance of occurring and the type of writing does not narrow down the type of ghost any more than the fact that the ghost writes in the book at all. Each book may contain different types of writing."
-                },
                 {
                     "title": "Photo Rewards",
                     "description": "Taking a photo of the Ghost Writing Book after it has been written in will yield a photo labelled as Ghost Writing, and reward up to $5 and 5XP, depending on the distance it was taken from. A photo labelled as Interaction, awarding up to $5 and 5XP, can be taken as well within 20 seconds of the book being written in. A Ghost Writing photo can only be obtained once per book, but interaction photos can be obtained separately if the ghost throws the book, regardless of whether the book has writing or not."
@@ -376,11 +380,8 @@
             ],
             "game_description": "Some Ghosts leave Electro Magnetic Fields (EMF) when they interact with things. Look out for extra strong readings that reach level 5.",
             "wiki_description": "EMF Level 5 (or EMF 5) is a piece of evidence used to determine the type of ghost haunting the location.",
+            "mechanics": "When a ghost with EMF Level 5 as one of its evidences interacts with the environment, the EMF reading will have a 25% chance to be an EMF 5 emission instead of EMF 2 or EMF 3, which can be detected and confirmed with an EMF Reader.",
             "notes": [
-                {
-                    "title": "Mechanics",
-                    "description": "When a ghost with EMF Level 5 as one of its evidences interacts with the environment, the EMF reading will have a 25% chance to be an EMF 5 emission instead of EMF 2 or EMF 3, which can be detected and confirmed with an EMF Reader."
-                },
                 {
                     "title": "EMF from the Site Activity Monitor",
                     "description": "EMF level 5 can possibly be obtained from the site activity monitor by observing an activity increase or decrease of 4 or 5 levels, although this does not gaurantee EMF 5 evidence. As the site activity monitor is an approximate representation of the total EMF currently present in the map, seeing multiple straight-line jumps of 4 and 5 levels is a likely indication of EMF 5, especially if no players are currently inside the investigation area. However, the reading given by the Site Activity Monitor is obfuscated a bit, and will randomly 'subtract' 1 or 2 from the emission that is then read out on the monitor; an increase or decrease of 3 levels may represent an EMF 5 emission, but should not be used as a hard indicator, as this jump is just as likely to represent an EMF 3 interaction. Note that some occurrences may also show up as jumps of 4 or 5 levels; avoid erroneously taking these to represent EMF 5: 1) A ghost event 2) The Poltergeist's multi-throw ability 3) Using the Voodoo Doll or Tarot Cards, resulting in two interactions occuring within the same second 4) A hunt ending, causing a jump from level 10 to a level 5/6 5) In general, interactions occuring very close to each-other"
@@ -403,11 +404,8 @@
             ],
             "game_description": "Small floating orbs of light, only visible through a camera.",
             "wiki_description": "Ghost Orbs are a type of evidence used to help determine the type of ghost haunting the location.",
+            "mechanics": "When a map is loaded in, Ghost Orbs will spawn in the favourite room and float within the room. They look like very small orbs that glide across the screen, generally one at a time. They can be seen through the screen on a Video Camera with night vision, or through any available video feed with night vision, but not through night vision goggles (Tier III Head Gear). Depending on the map and the location of the favourite room, Ghost Orbs can sometimes be seen via the map's CCTVs if the CCTV happens to be facing into the favourite room, though this is usually rare. Ghost Orbs will periodically shift position within the favourite room, forcing players to be more proactive in locating them. When the ghost room changes on difficulties where 'Changing favourite room' is not set to 'None' (such as on Professional, Nightmare, or Insanity), the Ghost Orbs will also move to the new favourite room.",
             "notes": [
-                {
-                    "title": "Mechanics",
-                    "description": "When a map is loaded in, Ghost Orbs will spawn in the favourite room and float within the room. They look like very small orbs that glide across the screen, generally one at a time. They can be seen through the screen on a Video Camera with night vision, or through any available video feed with night vision, but not through night vision goggles (Tier III Head Gear). Depending on the map and the location of the favourite room, Ghost Orbs can sometimes be seen via the map's CCTVs if the CCTV happens to be facing into the favourite room, though this is usually rare. Ghost Orbs will periodically shift position within the favourite room, forcing players to be more proactive in locating them. When the ghost room changes on difficulties where 'Changing favourite room' is not set to 'None' (such as on Professional, Nightmare, or Insanity), the Ghost Orbs will also move to the new favourite room."
-                },
                 {
                     "title": "The Mimic",
                     "description": "The Mimic induces Ghost Orbs as a 'false flag' evidence. Since its main pieces of evidences are Spirit Box, Ultraviolet, and Freezing Temperatures, Ghost Orbs will be unaffected by the number of evidences set (such as on Custom difficulties or Nightmare difficulty), even when it is set to 0."
@@ -433,7 +431,30 @@
                 "The Mimic"
             ],
             "game_description": "Some Ghosts have been known to leave fingerprints on objects such as doors and light switches, as well as leaving footprints after stepping in Salt. These can be revealed with a UV Light.",
-            "notes": ""
+            "wiki_description": "Ultraviolet is a type of evidence created by ghosts that can be used to determine the ghost type.",
+            "mechanics": "Ultraviolet evidence consists of fingerprints and footprints which can be revealed by using a UV Light.",
+            "notes": [
+                {
+                    "title": "Fingerprints",
+                    "description": "By default, each interaction on a valid surface will always produce a fingerprint. Exceptions include with the Obake which has a 25% chance to hide them, or when using the 'Fingerprint chance' custom difficulty modifier to reduce the odds. A ghost with Ultraviolet evidence will leave behind fingerprints when it interacts with the following surfaces or items: Most types of dorrs, light switches and lamps, windows, keyboards, TV remotes, cooler boxes, mirrors (specific maps only). The Prison map has additional places where fingerprints may be left behind: On the horizontal surface of a bar of cell doors and On the steel keyhole surface of cell doors. Maple Lodge Campsite and Camp Woodwind also have additional places where fingerprints may appear: Bases of lanterns, Interior edges around large tent door flaps/tops of small tent door flaps, picnic benchtops, string light poles. Lights flickering or interactions caused by ghost events will not result in a fingerprint being left behind in these instances. Depending on the surface area of the object being interacted with, either a fingerprint or a handprint will be visible. Fingerprints will disappear completely after 2 minutes, or 1 minute on Insanity difficulty. This can be changed using a custom difficulty setting. Additionally, the Obake can sometimes use an ability to reduce the remaining time for all existing fingerprints on the map by half. There are 18 different fingerprint patterns, including 3 which are unique to the Obake."
+                },
+                {
+                    "title": "Obake",
+                    "description": "When leaving fingerprints on surfaces it touches, an Obake has an approximately 16.7% chance to leave a non-standard pattern: A handprint with six fingers instead of five, Two fingerprints instead of one on light switches, lamps, and TV remotes, Five fingerprints instead of four on keyboards and Prison doors."
+                },
+                {
+                    "title": "Footprints",
+                    "description": "After a ghost steps in a salt pile, if it moves any time within 10 seconds after it steps in the pile, it will emit a footstep sound with each step, and if the ghost has Ultraviolet evidence, it will leave a footprint with each footstep sound. Each footprint will disappear after 10 to 15 seconds. The Obake has a 25% chance each step to hide the footstep sound, creating no footprint when successful. Because of the random nature of the game, a ghost may step in a salt pile and choose to stop moving immediately, creating no footprints in that instance. Footprints left by the 'tooth-faced' child ghost model are slightly smaller than those left by other ghost models."
+                },
+                {
+                    "title": "Photo Rewards",
+                    "description": "Taking a photo of a fingerprint that was charged using a UV Light will yield a photo labelled as Fingerprint, and reward up to $5 and 5XP, depending on the distance and angle it was taken from. Keep in mind, however, that fingerprints will slowly fade before becoming completely invisible after the player stops charging it with a UV Light. Invisible fingerprints cannot be photographed and will result in an invalid photo. Each instance of a fingerprint, including repeat fingerprints on the same surface, can only be photographed once. A photo labelled as Interaction, awarding up to $5 and 5XP, can be taken as well within 20 seconds of the fingerprint being left. Taking a photo of a footprint will yield a photo labelled as Footprint, and reward up to $5 and 5XP, depending on the distance it was taken from. As with Fingerprints, the footprints will need to be visible and charged by a UV light in order to be awarded."
+                },
+                {
+                    "title": "Tips",
+                    "description": "Footprints can be useful to check for Ultraviolet evidence if the ghost is not interacting with doors in a timely fashion. Footprints can sometimes be covered by certain furniture or carpets."
+                }
+            ]
         },
         {
             "name": "Freezing Temperatures",
@@ -451,7 +472,22 @@
                 "The Twins"
             ],
             "game_description": "All ghosts make rooms cold, however, some have been known to make the temperature drop extremely fast.",
-            "notes": ""
+            "wiki_description": "Freezing Temperatures (or Freezing Temps/Freezing) are a piece of evidence used to determine the type of ghost haunting the location.",
+            "mechanics": "The presence of a ghost in a room will cause the room's temperature to decrease, regardless of evidence. Ghosts without Freezing Temperatures evidence will be able to drop the room's temperature to 1C (33.8F), whereas ghosts with Freezing Temperatures as evidence will be able to drop the temperature to -10C (14F). Freezing Temperatures can only be confirmed if the thermometer reads a temperature strictly below 1C (33.8F). If using a Tier I thermometer, Freezing Temperatures can only be confirmed if the thermometer reads a temperature strictly below 0C (32F) as it is less accurate between 5C (41F) and 0C (32F) (there are only 8 graduations between these two values instead of 9).",
+            "notes": [
+                {
+                    "title": "Ghost Location and Temperatures",
+                    "description": "Temperatures only decrease when the ghost is within a room, and although the ghost is more likely to stay in its ghost room, making it colder, freezing temperatures do not necessarily indicate the ghost room. Additionally, temperatures do not return to normal immediately after a ghost leaves a room. This means that multiple rooms can be freezing at once, and that players should not assume that low or freezing temperatures guarantees that the ghost is still in that room. Seeing cold breath is not an indicator of Freezing Temperatures."
+                },
+                {
+                    "title": "Weather",
+                    "description": "If the fuse box is turned off at the start, Freezing Temperatures may be obtained quicker, depending on the weather and how often the ghost roams into other rooms. In particular, one could theoretically observe Freezing Temperatures in approximately two minutes if it is snowing, as long as the ghost stays in the same room for long enough. Temperatures drop at 1/3 the current speed, if the temperature is below the weather's ambient temperature."
+                },
+                {
+                    "title": "Visual effects",
+                    "description": "Nearly all ghosts can initiate an 'airball' ghost event which is visually similar to the player's breath, other than in movement. The airball does not count as an indicator for low temperatures. The main difference is that the airball event usually moves towards a particular player, while cold breath never moves by itself."
+                }
+            ]
         },
         {
             "name": "Spirit Box",
@@ -469,7 +505,380 @@
                 "Wraith"
             ],
             "game_description": "Only certain ghosts will talk through a Spirit Box when asked a question with your voice. Make sure the lights are turned off.",
-            "notes": ""
+            "wiki_description": "Spirit Box is a type of evidence in Phasmophobia. It is used to determine which type of ghost is inhabiting a location. Its corresponding piece of equipment is the Spirit Box.",
+            "mechanics": "Spirit Box evidence can be obtained through its equipment counterpart by asking the ghost various questions while it is enabled. There are some conditions to this, however: The player must be in the same room as the ghost, The player must be within range of the ghost (3 metres with a Tier I Spirit Box, 4 metres with a Tier II Spirit Box, and 5 metres with a Tier III Spirit Box), All ambient lighting in said room must be off. Adjacent rooms do not need their lights disabled, and equipment doesn't need to be turned off, Ghosts who respond only to 'people who are alone' will only respond if there is only one player in the room. Otherwise, the number of players in the room does not matter. If these conditions are met, the ghost will have a chance to respond.",
+            "notes": [
+                {
+                    "title": "Possible Questions",
+                    "description": "There are three main categories of questions that differentiate the responses a ghost will give to players: Aggressiveness, Location, and Age."
+                },
+                {
+                    "title": "Possible Answers",
+                    "description": "The player may try to extract information from these audio snippets, but they're not always intelligible enough. For example, when a voice saying 'a young individual' is heard after asking for the ghost's age, it is safe to assume the ghost is young. Hearing 'right here' or 'look behind you' in response to a location-related question means that the ghost is nearby."  
+                }
+            ]
+        }
+    ],
+    "equipment": [
+        {
+            "name": "Crucifix",
+            "description": "Prevents ghosts from hunting in a certain radius.",
+            "mechanics": "A crucifix can be held in the player's hand, thrown, or placed; the crucifix works in all three situations. Holding F will show the default effective range for the crucifix; this is a translucent sphere with a radius depending on its tier level (even if the ghost has a different effective range): Tier I: 3 metres, Tier II: 4 metres, Tier III: 5 metres. When the ghost attempts to initiate a hunt within the crucifix's range, the hunt will fail to begin, and a charge will be used. The ghost is then teleported back to its favourite room. Each time a crucifix successfully prevents a hunt, an EMF Level 2 reading is created, with a 25% chance for this to be EMF Level 5 if it is one of the ghost's evidences. For the Demon, the crucifix's effective range is increased by 50% for each tier: Tier I: 4.5 metres, Tier II: 6 metres, Tier III: 7.5 metres. The Tier I crucifix only has one charge, while tier II and tier III both have two charges. Each time it blocks a hunt attempt, a burning effect will appear, and the crucifix will glow visually before fading slightly darker. On first use, one arm of the crucifix will disappear. On second use, more parts of the crucifix will disappear. If a player-held crucifix successfully prevents a hunt attempt, it will automatically be thrown on the ground. After the crucifix is completely burnt, the crucifix will be useless and have no further effect on the ghost. In addition, the crucifix will not work if: The ghost is not within the specified range (even if the crucifix is located in the favourite room), A cursed possession is used to initiate a cursed hunt (Except for in the case of an unused tier III crucifix, which can be used to stop a cursed hunt at the cost of both its charges), A hunt has already started/is in progress. Each time a crucifix is used, the ghost must wait a minimum of 25 seconds (20 seconds for a Demon) before attempting to initiate another hunt. The crucifix range is not limited by any obstacle such as walls and doors. This includes exterior walls, which means that it is possible for crucifixes to be used outside provided the ghost is within its range inside the investigation area. 42 Edgefield Road is a good example of this, where a ghost near the front of the house, even upstairs, could possibly use up a crucifix still hanging on the van wall.",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "This crucifix can be held or placed to stop the ghost from initiating a single attack. Make sure to keep it placed near any activity you may find.",
+                    "level_required": "8"
+                },
+                {
+                    "tier": "2",
+                    "description": "A metal crucifix that can be used to block two attacks, with a larger range. Remember to keep it in close proximity to any activity you come across.",
+                    "level_required": "37"
+                },
+                {
+                    "tier": "3",
+                    "description": "This crucifix has an even larger range than its previous version. Additionally, an unused crucifix can prevent a cursed hunt, consuming both uses.",
+                    "level_required": "90"
+                }
+            ],
+            "notes": [
+                {
+                    "title": "Photo Rewards",
+                    "description": "Taking a photo of a crucifix that has been used once or twice will yield a Burned Crucifix photo, rewarding up to $10 and 10XP depending on the distance the photo was taken from. Up to 4 Burned Crucifix photos can be obtained for two crucifixes. Additionally, if a crucifix is photographed within 20 seconds of preventing a hunt it will also yield an Interaction photo, rewarding up to $5 and 5XP. Therefore, a maximum number of 8 photo rewards can be obtained from two crucifixes."
+                },
+                {
+                    "title": "Tips",
+                    "description": "Although the crucifix works while held in-hand, it is strongly advised to place the crucifix on the ground, as this will free the player to do other objectives or hold onto more useful equipment during the investigation."
+                }
+            ]
+        },
+        {
+            "name": "Firelight",
+            "description": "Used for optional objectives, and to provide light.",
+            "mechanics": "It is a deployable light source that can be lit using a source of fire such as an igniter or another firelight. It can be used to continuously light up a room with a warm, orange glow, and mitigate sanity drain from darkness, until it eventually burns out. Ghosts tend to blow out nearby firelights, making them effective at checking if a ghost is nearby.",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "This small candle will provide light and some sanity loss prevention, but only for a while, the wax burns down quite fast!",
+                    "level_required": "12"
+                },
+                {
+                    "tier": "2",
+                    "description": "With three candles instead of one, the light provided is much brighter, longer range and lasts longer. Additionally, this Firelight doesn't need to be held to gain its effects, so you can place it and stand nearby to still receive the sanity benefits!",
+                    "level_required": "47"
+                },
+                {
+                    "tier": "3",
+                    "description": "This lantern will last for the entirety of a contract, so there's no worry of it going out when you need it most. Just like its predecessor you can stand nearby to gain its effects. Lastly, it's waterproof so it even works in the rain!",
+                    "level_required": "79"
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Head Gear",
+            "description": "Can be equipped on a player's head. Will provide a video feed to the computer. Can be used to detect Ghost Orbs. To turn on head gear hold T(default).",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Igniter",
+            "description": "Used to light firelight and incense. Can also be used on campfires in Maple Lodge Campsite and Camp Woodwind.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Incense",
+            "description": "Used to prevent a ghost from hunting for a short period of time. Can also be used during a hunt to blind the ghost temporarily.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Motion Sensor",
+            "description": "Provides light when a ghost or player passes it. A signal is also provided to the Van.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Parabolic Microphone",
+            "description": "Used to listen to paranormal sounds in a large range.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Photo Camera",
+            "description": "Used to take photos of various ghost interactions for additional profit.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Salt",
+            "description": "Places salt piles that ghosts can interact with to leave footprints.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Sanity Medication",
+            "description": "Restores the consumer's sanity by a certain amount dependent on Difficulty.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Sound Sensor",
+            "description": "Detects near inaudible sounds in an area, and relays the data to the Van.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "name": "Tripod",
+            "description": "Used as a mount for Video Cameras. Lowers the chance for ghost to throw a Video Camera.",
+            "mechanics": "",
+            "tiers": [
+                {
+                    "tier": "1",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "2",
+                    "description": "",
+                    "level_required": ""
+                },
+                {
+                    "tier": "3",
+                    "description": "",
+                    "level_required": ""
+                }
+            ],
+            "notes": [
+                {
+                    "title": "",
+                    "description": ""
+                }
+            ]
+        }
+    ],
+    "cursed_items": [
+        {
+            "name": "Haunted Mirror"
+        },
+        {
+            "name": "Monkey Paw"
+        },
+        {
+            "name": "Ouija Board"
+        },
+        {
+            "name": "Summoning Circle"
+        },
+        {
+            "name": "Tarot Cards"
+        },
+        {
+            "name": "Voodoo Doll"
         }
     ]
 }
