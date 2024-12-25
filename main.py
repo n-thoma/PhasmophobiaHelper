@@ -15,6 +15,7 @@ from typing_extensions import override
 from openai import OpenAI, AssistantEventHandler
 import json
 
+
 # ---------------------------------------------------------------------------------------------------------------------
 #   config.json Extract Functions
 # ---------------------------------------------------------------------------------------------------------------------
@@ -36,6 +37,7 @@ def get_instructions():
     with open("config.json", 'r') as file:
         data = json.load(file)
     return data.get("Assistant_Instructions")
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   Assistant Setup
@@ -60,13 +62,13 @@ phasmophobia_assistant = client.beta.assistants.create(
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "ghost_name": {
+                        "arg": {
                             "type": "string",
                             "enum": ["Spirit", "Poltergeist", "Mare", "Demon", "Yokai", "Myling", "Raiju", "Moroi", "Wraith", "Banshee", "Revenant", "Yurei", "Hantu", "Onryo", "Obake", "Deogen", "Phantom", "Jinn", "Shade", "Oni", "Goryo", "The Twins", "The Mimic", "Thaye"],
                             "description": "The ghost you want to learn about."
                         }
                     },
-                    "required": ["ghost_name"]
+                    "required": ["arg"]
                 }
             }
         },
@@ -78,13 +80,13 @@ phasmophobia_assistant = client.beta.assistants.create(
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "evidence_name": {
+                        "arg": {
                             "type": "string",
                             "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
                             "description": "The evidence you want to learn about."
                         }
                     },
-                    "required": ["evidence_name"]
+                    "required": ["arg"]
                 }
             }
         },
@@ -96,13 +98,13 @@ phasmophobia_assistant = client.beta.assistants.create(
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "evidence_name": {
+                        "arg": {
                             "type": "string",
                             "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
                             "description": "The evidence name."
                         }
                     },
-                    "required": ["evidence_name"]
+                    "required": ["arg"]
                 }
             }
         },
@@ -114,12 +116,12 @@ phasmophobia_assistant = client.beta.assistants.create(
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "keyword": {
+                        "arg": {
                             "type": "string",
                             "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word."
                         }
                     },
-                    "required": ["keyword"]
+                    "required": ["arg"]
                 }
             }
         },
@@ -131,13 +133,31 @@ phasmophobia_assistant = client.beta.assistants.create(
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "equipment_name": {
+                        "arg": {
                             "type": "string",
                             "enum": ["Crucifix", "Firelight", "Head Gear", "Igniter", "Incense", "Motion Sensor", "Parabolic Microphone", "Photo Camera", "Salt", "Sanity Medication", "Sound Sensor", "Tripod"],
                             "description": "The equipment you want to learn about."
                         }
                     },
-                    "required": ["equipment_name"]
+                    "required": ["arg"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "get_cursed_item_data",
+                "description": "Gives you, the AI assistant information on a Phasmophobia cursed item of your choice.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "arg": {
+                            "type": "string",
+                            "enum": ["Haunted Mirror", "Monkey Paw", "Music Box", "Ouija Board", "Summoning Circle", "Tarot Cards", "Voodoo Doll"],
+                            "description": "The cursed item you want to learn about."
+                        }
+                    },
+                    "required": ["arg"]
                 }
             }
         }
@@ -146,6 +166,7 @@ phasmophobia_assistant = client.beta.assistants.create(
 
 # Init thread
 thread = client.beta.threads.create()
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   Ghost Data Helper Functions
@@ -214,13 +235,23 @@ def search_ghosts_from_keyword(keyword):
 
 
 # Gets equipment json data from the given name
-def get_equipment_data(equipment_data):
+def get_equipment_data(equipment_name):
     for equipment in data["equipment"]:
-        if equipment["name"].lower() == equipment_data.lower():
+        if equipment["name"].lower() == equipment_name.lower():
             return equipment
         
 
-# EventHandler class to define how to handle the events in the response stream.
+# Gets cursed item json data from the given name
+def get_cursed_item_data(item_name):
+    for item in data["cursed_items"]:
+        if item["name"].lower() == item_name.lower():
+            return item
+        
+
+# ---------------------------------------------------------------------------------------------------------------------
+#   EventHandler class to define how to handle the events in the response stream.
+# ---------------------------------------------------------------------------------------------------------------------
+
 class EventHandler(AssistantEventHandler):    
 
     @override
@@ -251,27 +282,26 @@ class EventHandler(AssistantEventHandler):
         # For all tools that require action
         for tool in data.required_action.submit_tool_outputs.tool_calls:
 
-            # Extract args
-            args = json.loads(tool.function.arguments)
-            
+            # Extract arg
+            arg = json.loads(tool.function.arguments).get("arg")
+
             # Where output will be stored
             output_str = ""
 
-            # Call proper function
-            if tool.function.name == "get_ghost_data":
-                output_str = get_ghost_data(args.get("ghost_name"))
-            elif tool.function.name == "get_evidence_data":
-                output_str = get_evidence_data(args.get("evidence_name"))
-            elif tool.function.name == "get_ghosts_from_evidence":
-                output_str = get_ghosts_from_evidence(args.get("evidence_name"))
-            elif tool.function.name == "search_ghosts_from_keyword":
-                output_str = search_ghosts_from_keyword(args.get("keyword"))
+            # Extract function and call it with proper arg
+            try:
+                func = globals().get(tool.function.name)
+                if callable(func):
+                    output_str = func(str(arg))
 
-        print(tool)
-        print(output_str)
+            except AttributeError:
+                print(f"{tool.function.name} is not callable.")
 
-        # Append output to tool_outputs arr
-        tool_outputs.append({"tool_call_id": tool.id, "output": str(output_str)})
+            print(tool)
+            print(output_str)
+
+            # Append output to tool_outputs arr
+            tool_outputs.append({"tool_call_id": tool.id, "output": str(output_str)})
 
         # Submit all tool_outputs at the same time
         self.submit_tool_outputs(tool_outputs, run_id)
