@@ -59,14 +59,14 @@ phasmophobia_assistant = client.beta.assistants.create(
             "type": "function",
             "function": {
                 "name": "get_ghost_data",
-                "description": "Gives you, the AI assistant information on a Phasmophobia ghost of your choice.",
+                "description": "Outputs data about a specific ghost of a given name. Data includes: evidence needed, strengths, weaknesses, description, and notes about the ghost.",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "arg": {
                             "type": "string",
                             "enum": ["Spirit", "Poltergeist", "Mare", "Demon", "Yokai", "Myling", "Raiju", "Moroi", "Wraith", "Banshee", "Revenant", "Yurei", "Hantu", "Onryo", "Obake", "Deogen", "Phantom", "Jinn", "Shade", "Oni", "Goryo", "The Twins", "The Mimic", "Thaye"],
-                            "description": "The ghost you want to learn about."
+                            "description": "The name of the ghost you want to learn about."
                         }
                     },
                     "required": ["arg"]
@@ -77,14 +77,14 @@ phasmophobia_assistant = client.beta.assistants.create(
             "type": "function",
             "function": {
                 "name": "get_evidence_data",
-                "description": "Gives you, the AI assistant information on a Phasmophobia evidence of your choice.",
+                "description": "Outputs data about a specific evidence type of a given name. Data includes: Ghost Proven With, descriptions, mechanics, and notes about the evidence type. Does NOT talk about the equipment! Only talks about the evidence itself.",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "arg": {
                             "type": "string",
                             "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
-                            "description": "The evidence you want to learn about."
+                            "description": "The name of the evidence you want to learn about."
                         }
                     },
                     "required": ["arg"]
@@ -95,14 +95,14 @@ phasmophobia_assistant = client.beta.assistants.create(
             "type": "function",
             "function": {
                 "name": "get_ghosts_from_evidence",
-                "description": "Gives you, the AI assistant a list of ghosts that a given evidence can prove.",
+                "description": "Outputs a list of possible ghosts from the given evidence name. Use this if user asks something like: What ghosts can be proven with EMF Level 5?",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "arg": {
                             "type": "string",
                             "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
-                            "description": "The evidence name."
+                            "description": "The name of the evidence."
                         }
                     },
                     "required": ["arg"]
@@ -113,13 +113,13 @@ phasmophobia_assistant = client.beta.assistants.create(
             "type": "function",
             "function": {
                 "name": "search_ghosts_from_keyword",
-                "description": "Gives you, the AI assistant a the ability to search for a ghost using a keyword.",
+                "description": "Outputs every ghost and its data that contains the given keyword in its data. Only searches for results in ghosts; not evidence, not equipment, not cursed items.",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "arg": {
                             "type": "string",
-                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word."
+                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word. Examples: 'fast', 'slow', 'hunt', 'breath'"
                         }
                     },
                     "required": ["arg"]
@@ -130,14 +130,14 @@ phasmophobia_assistant = client.beta.assistants.create(
             "type": "function",
             "function": {
                 "name": "get_equipment_data",
-                "description": "Gives you, the AI assistant information on a Phasmophobia equipment of your choice.",
+                "description": "Outputs data about a equipment of a given name. Data includes: description, mechanics, data on the different tiers, and other notes about the equipment",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "arg": {
                             "type": "string",
-                            "enum": ["Crucifix", "Firelight", "Head Gear", "Igniter", "Incense", "Motion Sensor", "Parabolic Microphone", "Photo Camera", "Salt", "Sanity Medication", "Sound Sensor", "Tripod"],
-                            "description": "The equipment you want to learn about."
+                            "enum": ["D.O.T.S. Projector", "EMF Reader", "Ghost Writing Book", "Spirit Box", "Thermometer", "UV Light", "Video Camera", "Flashlight", "Crucifix", "Firelight", "Head Gear", "Igniter", "Incense", "Motion Sensor", "Parabolic Microphone", "Photo Camera", "Salt", "Sanity Medication", "Sound Sensor", "Tripod"],
+                            "description": "The name of the equipment you want to learn about."
                         }
                     },
                     "required": ["arg"]
@@ -148,14 +148,31 @@ phasmophobia_assistant = client.beta.assistants.create(
             "type": "function",
             "function": {
                 "name": "get_cursed_item_data",
-                "description": "Gives you, the AI assistant information on a Phasmophobia cursed item of your choice.",
+                "description": "Outputs data about a cursed item of a given name. Data includes: description, mechanics, and other notes about the cursed item",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "arg": {
                             "type": "string",
                             "enum": ["Haunted Mirror", "Monkey Paw", "Music Box", "Ouija Board", "Summoning Circle", "Tarot Cards", "Voodoo Doll"],
-                            "description": "The cursed item you want to learn about."
+                            "description": "The name of the cursed item you want to learn about."
+                        }
+                    },
+                    "required": ["arg"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "search_equipment_from_keyword",
+                "description": "Outputs every equipment and its data that contains the given keyword in its data. Only searches for results in equipment; not evidence, not ghost, not cursed items.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "arg": {
+                            "type": "string",
+                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word. Examples: 'freezing', 'glitch', 'head', 'blind'"
                         }
                     },
                     "required": ["arg"]
@@ -201,37 +218,55 @@ def get_ghosts_from_evidence(evidence_name):
 
 # Gets information on ghosts given a key word
 def search_ghosts_from_keyword(keyword):
-
-    # Stores all results here
     results = []
 
-    # Iterates through ghosts
+    # Iterates through ghosts and all its elements, searching for keyword
     for ghost in data["ghosts"]:
 
-        # Searches for keyword in strengths
+        for evidence in ghost["evidence"]:
+            if keyword in evidence.lower():
+                results.append(f"Found {keyword} in {ghost["name"]} in Evidence: {ghost["evidence"]}")
+
         if keyword.lower() in ghost["strengths"].lower():
             results.append(f"Found {keyword} in {ghost["name"]} in Strengths: {ghost["strengths"]}")
-
-        # Searches for keyword in weaknesses
         if keyword.lower() in ghost["weaknesses"].lower():
             results.append(f"Found {keyword} in {ghost["name"]} in Weaknesses: {ghost["weaknesses"]}")
-
-        # Searches for keyword in the game description
         if keyword.lower() in ghost["game_description"].lower():
             results.append(f"Found {keyword} in {ghost["name"]} in Game Description: {ghost["game_description"]}")
 
-        # Iterates through notes
         for note in ghost["notes"]:
-
-            # Searches for keyword in note title
             if keyword.lower() in note["title"].lower():
                 results.append(f"Found {keyword} in {ghost["name"]} in a Note titled {note["title"]}: {note["description"]}")
-
-            # Searches for keyword in the note body
             if keyword.lower() in note["description"].lower():
                 results.append(f"Found {keyword} in {ghost["name"]} in a Note titled {note["title"]}: {note["description"]}")
 
-    # Return results
+    return results
+
+
+# Gets information on equipment given a key word
+def search_equipment_from_keyword(keyword):
+    results = []
+
+    # Iterates through evidences and all its elements, searching for keyword
+    for evidence in data["evidences"]:
+
+        for ghost in evidence["ghosts_proven_with"]:
+            if keyword in ghost.lower():
+                results.append(f"Found {keyword} in {evidence["name"]} in Ghosts Proven With: {evidence["ghosts_proven_with"]}")
+
+        if keyword in evidence["game_description"]:
+            results.append(f"Found {keyword} in {evidence["name"]} in Game Description: {evidence["game_description"]}")
+        if keyword in evidence["wiki_description"]:
+            results.append(f"Found {keyword} in {evidence["name"]} in Wiki Description: {evidence["wiki_description"]}")
+        if keyword in evidence["mechanics"]:
+            results.append(f"Found {keyword} in {evidence["name"]} in Mechanics: {evidence["mechanics"]}")
+
+        for note in evidence["notes"]:
+            if keyword.lower() in note["title"].lower():
+                results.append(f"Found {keyword} in {evidence["name"]} in a Note titled {note["title"]}: {note["description"]}")
+            if keyword.lower() in note["description"].lower():
+                results.append(f"Found {keyword} in {evidence["name"]} in a Note titled {note["title"]}: {note["description"]}")
+
     return results
 
 
@@ -258,7 +293,7 @@ class EventHandler(AssistantEventHandler):
     @override
     def on_event(self, event):
         if event.event == 'thread.run.requires_action':
-            run_id = event.data.id  # Retrieve the run ID from the event data
+            run_id = event.data.id
             self.handle_requires_action(event.data, run_id)
 
     def handle_requires_action(self, data, run_id):
@@ -300,6 +335,7 @@ class EventHandler(AssistantEventHandler):
             print()
 
 
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Function to get assistant response
 def get_assistant_response(prompt):
@@ -326,7 +362,6 @@ if 'chat_history' not in streamlit.session_state:
 streamlit.set_page_config(page_title="G.H.O.S.T.", page_icon="👻")
 streamlit.title("Ghost Hunting Operations and Survival Tool")
 
-
 # Display the conversation history
 for message in streamlit.session_state.chat_history:
     if isinstance(message, HumanMessage):
@@ -335,7 +370,6 @@ for message in streamlit.session_state.chat_history:
     else:
         with streamlit.chat_message("AI"):
             streamlit.markdown(message.content)
-
 
 # Input prompt from the user
 user_prompt = streamlit.chat_input("Enter your prompt:")
