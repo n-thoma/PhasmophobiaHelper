@@ -13,8 +13,9 @@
 
 from typing_extensions import override
 from openai import OpenAI, AssistantEventHandler
+from langchain_core.messages import HumanMessage, AIMessage
 import json
-
+import streamlit
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   config.json Extract Functions
@@ -256,36 +257,16 @@ class EventHandler(AssistantEventHandler):
 
     @override
     def on_event(self, event):
-        # Retrieve events that are denoted with 'requires_action'
-        # since these will have our tool_calls
         if event.event == 'thread.run.requires_action':
             run_id = event.data.id  # Retrieve the run ID from the event data
             self.handle_requires_action(event.data, run_id)
 
-    #@override
-    #def on_text_created(self, text) -> None:
-    #    print(f"\nassistant > ", end="", flush=True)
-        
-    #@override
-    #def on_text_delta(self, delta, snapshot):
-    #    print(delta.value, end="", flush=True)
-        
-    #def on_tool_call_created(self, tool_call):
-    #    if tool_call.type == 'function':
-    #        print(tool_call)
-
     def handle_requires_action(self, data, run_id):
-
-        # This will be submitted to tool outputs later
         tool_outputs = []
 
         # For all tools that require action
         for tool in data.required_action.submit_tool_outputs.tool_calls:
-
-            # Extract arg
             arg = json.loads(tool.function.arguments).get("arg")
-
-            # Where output will be stored
             output_str = ""
 
             # Extract function and call it with proper arg
@@ -293,7 +274,7 @@ class EventHandler(AssistantEventHandler):
                 func = globals().get(tool.function.name)
                 if callable(func):
                     output_str = func(str(arg))
-
+                    
             except AttributeError:
                 print(f"{tool.function.name} is not callable.")
 
@@ -303,14 +284,13 @@ class EventHandler(AssistantEventHandler):
             # Append output to tool_outputs arr
             tool_outputs.append({"tool_call_id": tool.id, "output": str(output_str)})
 
-        # Submit all tool_outputs at the same time
         self.submit_tool_outputs(tool_outputs, run_id)
 
 
     def submit_tool_outputs(self, tool_outputs, run_id):
         # Use the submit_tool_outputs_stream helper
         with client.beta.threads.runs.submit_tool_outputs_stream(
-                thread_id=self.current_run.thread_id,
+                thread_id=thread.id,
                 run_id=run_id,
                 tool_outputs=tool_outputs,
                 event_handler=EventHandler(),
@@ -320,23 +300,56 @@ class EventHandler(AssistantEventHandler):
             print()
 
 
-# Always update the thread with user and bot back-and-forth
-while True:
 
-    prompt = input("Enter a prompt: ")
-    client.beta.threads.messages.create(thread.id,
-                                        role="user",
-                                        content=prompt)
+# Function to get assistant response
+def get_assistant_response(prompt):
+    # Send user message to the thread
+    client.beta.threads.messages.create(thread.id, role="user", content=prompt)
 
+    # Start a run
     with client.beta.threads.runs.stream(
         thread_id=thread.id,
-        assistant_id=phasmophobia_assistant.id,
+        assistant_id=phasmophobia_assistant.id, 
         event_handler=EventHandler()
     ) as stream:
-      stream.until_done()
+        stream.until_done()
+
+    # Get the latest messages in the thread
+    messages = client.beta.threads.messages.list(thread_id=thread.id)
+    return messages.data[0].content[0].text.value
 
 
-    messages = client.beta.threads.messages.list(
-        thread_id=thread.id
-    )
-    print("Assistant: " + messages.data[0].content[0].text.value)
+# Chat history container
+if 'chat_history' not in streamlit.session_state:
+    streamlit.session_state.chat_history = []
+
+streamlit.set_page_config(page_title="G.H.O.S.T.", page_icon="👻")
+streamlit.title("Ghost Hunting Operations and Survival Tool")
+
+
+# Display the conversation history
+for message in streamlit.session_state.chat_history:
+    if isinstance(message, HumanMessage):
+        with streamlit.chat_message("Human"):
+            streamlit.markdown(message.content)
+    else:
+        with streamlit.chat_message("AI"):
+            streamlit.markdown(message.content)
+
+
+# Input prompt from the user
+user_prompt = streamlit.chat_input("Enter your prompt:")
+
+if user_prompt is not None and user_prompt != "":
+
+    # Add user's input to the session history
+    streamlit.session_state.chat_history.append(HumanMessage(user_prompt))
+
+    with streamlit.chat_message("Human"):
+        streamlit.markdown(user_prompt)
+
+    with streamlit.chat_message("AI"):
+        assistant_response = get_assistant_response(user_prompt)
+        streamlit.markdown(assistant_response)
+
+    streamlit.session_state.chat_history.append(AIMessage(assistant_response))
