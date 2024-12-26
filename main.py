@@ -119,7 +119,7 @@ phasmophobia_assistant = client.beta.assistants.create(
                     "properties": {
                         "arg": {
                             "type": "string",
-                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word. Examples: 'fast', 'slow', 'hunt', 'breath'"
+                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word, but short phrases allowed too. Examples: 'fast', 'slow', 'hunt', 'breath'"
                         }
                     },
                     "required": ["arg"]
@@ -172,7 +172,24 @@ phasmophobia_assistant = client.beta.assistants.create(
                     "properties": {
                         "arg": {
                             "type": "string",
-                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word. Examples: 'freezing', 'glitch', 'head', 'blind'"
+                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word, but short phrases allowed too. Examples: 'freezing', 'glitch', 'head', 'blind'"
+                        }
+                    },
+                    "required": ["arg"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "search_cursed_item_from_keyword",
+                "description": "Outputs every cursed item and its data that contains the given keyword in its data. Only searches for results in cursed items; not evidence, not equipment, not ghosts.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "arg": {
+                            "type": "string",
+                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word, but short phrases allowed too. Examples: 'sanity', 'ghost', 'hunt', 'ghost room'"
                         }
                     },
                     "required": ["arg"]
@@ -244,6 +261,27 @@ def search_ghosts_from_keyword(keyword):
 
 
 # Gets information on equipment given a key word
+def search_cursed_item_from_keyword(keyword):
+    results = []
+
+    # Iterates through cursed items and all its elements, searching for keyword
+    for cursed_item in data["cursed_items"]:
+
+        if keyword in cursed_item["description"]:
+            results.append(f"Found {keyword} in {cursed_item["name"]} in Description: {cursed_item["description"]}")
+        if keyword in cursed_item["mechanics"]:
+            results.append(f"Found {keyword} in {cursed_item["name"]} in Mechanics: {cursed_item["mechanics"]}")
+
+        for note in cursed_item["notes"]:
+            if keyword.lower() in note["title"].lower():
+                results.append(f"Found {keyword} in {cursed_item["name"]} in a Note titled {note["title"]}: {note["description"]}")
+            if keyword.lower() in note["description"].lower():
+                results.append(f"Found {keyword} in {cursed_item["name"]} in a Note titled {note["title"]}: {note["description"]}")
+
+    return results
+
+
+# Gets information on cursed item given a key word
 def search_equipment_from_keyword(keyword):
     results = []
 
@@ -295,6 +333,7 @@ class EventHandler(AssistantEventHandler):
         if event.event == 'thread.run.requires_action':
             run_id = event.data.id
             self.handle_requires_action(event.data, run_id)
+
 
     def handle_requires_action(self, data, run_id):
         tool_outputs = []
@@ -359,6 +398,11 @@ def get_assistant_response(prompt):
 if 'chat_history' not in streamlit.session_state:
     streamlit.session_state.chat_history = []
 
+# Thread ID container (store id in session state to preserve thread)
+if 'thread_id' not in streamlit.session_state:
+    streamlit.session_state.thread_id = None
+
+
 streamlit.set_page_config(page_title="G.H.O.S.T.", page_icon="👻")
 streamlit.title("Ghost Hunting Operations and Survival Tool")
 
@@ -383,6 +427,13 @@ if user_prompt is not None and user_prompt != "":
         streamlit.markdown(user_prompt)
 
     with streamlit.chat_message("AI"):
+        # Check if thread_id is None, if so create a new thread, else retrieve the thread
+        if streamlit.session_state.thread_id is None:
+            thread = client.beta.threads.create()
+            streamlit.session_state.thread_id = thread.id
+        else:
+            thread = client.beta.threads.retrieve(streamlit.session_state.thread_id)
+
         assistant_response = get_assistant_response(user_prompt)
         streamlit.markdown(assistant_response)
 
