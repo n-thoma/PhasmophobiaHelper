@@ -631,226 +631,337 @@
     ],
     "equipment": [
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "D.O.T.S. Projector",
+            "description": "Creates a field of green lights when placed. Used to detect D.O.T.S Projector evidence.",
+            "mechanics": "The D.O.T.S Projector is a piece of electronic starter equipment, as well as a type of evidence, that can be used to reveal the ghost's movement.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "A handheld projector that can be used while moving. Use it near ghost activity and scan for a physical form that may appear!",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "This small projector emits a medium sized sphere of light. Place it on the floor for the best coverage of small to medium-sized rooms.",
+                    "level_required": 29
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "For the best coverage, place this projector on a wall or upright surface, stand nearby, and watch as it scans the environment. To increase coverage even more, place two projectors opposite each other to fill entire rooms with infrared light!",
+                    "level_required": 60
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Usage",
+                    "description": "The D.O.T.S Projector can be placed on a wall or floor similar to a motion sensor. It emits a matrix of bright green laser points in a small area from the projector. Tier I D.O.T.S Projector additionally can be held and toggled to create a cone of D.O.T.S light where it is pointed. The Tier I D.O.T.S Projector will not work if Flashlights are turned off in custom difficulty settings. Ghosts with D.O.T.S evidence will occasionally enter a 'D.O.T.S state'. During this, a faint silhouette of the ghost will be visible only when it passes through the laser grid. The ghost will also walk towards the nearest player if there is one in the same room, or towards a random waypoint if no players are nearby. While these silhouettes are visible to the naked eye (unless the ghost is a Goryo), a video camera with night vision may allow for better visibility. This also means that D.O.T.S can be tracked simultaneously alongside Ghost Orbs. Dead players cannot see the D.O.T.S state by any means. Though the D.O.T.S Projector is an electronic equipment, only the Tier I D.O.T.S. Projector when activated and held will attract the ghost to the player during a hunt, and they are otherwise safe to hold onto."
+                },
+                {
+                    "title": "Photo Rewards",
+                    "description": "The D.O.T.S silhouette can be photographed and will show up as Ghost, rewarding up to $20 and 20 XP depending on the photo distance. This photo will complete the 'Capture a photo of the Ghost' objective without needing a Ghost Event to occur."
+                },
+                {
+                    "title": "Tips",
+                    "description": "A good way to see the D.O.T.S silhouette clearly is to have the room lights turned off and use a video camera with night vision on, then look either directly through the video camera screen or the computer. This will increase the silhouette's contrast against the background. Having two D.O.T.S Projectors placed can allow the silhouette to be visible for longer as it moves across the lighting radius. If the favourite room is small, consider placing the D.O.T.S Projector in a neighbouring room to aid visibility. The Projector emits a substantial amount of light when placed. Investigators can use them for illumination, especially with a spare Projector or when D.O.T.S evidence can be safely crossed off. Note that the D.O.T.S projector light does not mitigate sanity drain. The Tier II and III D.O.T.S Projectors can be placed on some ceilings in a few maps, which may allow the light to cover a room with much more consistency. This is especially useful for the tier III projector, whose sweeping motions and cone-shaped light area can cause the ghost to potentially leave its light prematurely depending on the ghost's and the projector's movement. The green light emitted may obscure nearby fingerprints or footprints; look carefully or remove the projector when checking for ultraviolet evidence. Some visual effects such as freezing breath or Incense smoke will reflect the D.O.T.S Projector's light. Be careful to not confuse them with a D.O.T.S silhouette. There is currently a bug where the ghost can initiate a ghost event or a hunt while in 'D.O.T.S state'. This will make the ghost entirely invisible and nearly quiet (footsteps will not be heard) outside of a D.O.T.S. Projector's range."
                 }
             ]
         },
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "EMF Reader",
+            "description": "The EMF reader is a buyable piece of equipment used to read the strength of electromagnetic fields in the nearby environment. The EMF reader is used to detect evidence of EMF Level 5.",
+            "mechanics": "The reader can be toggled on to begin reading any emissions. The device's effective range, as well as how the reading is displayed, is dependent on the tier of the EMF Reader. Holding an active EMF reader within 7.5 metres of a ghost (or 2.5 metres for a Yokai) during a hunt on the same floor will attract the ghost. During hunts or when the ghost manifests, EMF readers within 10 metres of the ghost (or higher for a Raiju) will malfunction and display random values between level 1 and 4.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "Switch this EMF meter on and scan anything that moves to see if you get a reading. If the needle starts to move rapidly above a reading of 5, you've found some evidence!",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "The K2 meter has a larger range and five LED lights to display EMF readings, as well as an additional speaker module. One light will turn on when you activate the device, two to four lights will emit for general interactions, and all five lights will glow when evidence has been found!",
+                    "level_required": 20
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "This EMF Reader can track up to three EMF spots at once. For each of them it will display the range, a directional display and the intensity of the reading. Once an EMF spot fades away, the remaining readings will be pushed up in the list on the screen, so that the newest one is always at the bottom. Each EMF reading will also play a beeping sound periodically, a higher pitch note relates to a higher intensity of EMF!",
+                    "level_required": 52
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Tier 1",
+                    "description": "The Tier I EMF Reader is an old GheistField Meter. It is reminiscent of an old Geiger counter, and has a 1.7 metre range at which it can pick up readings. When in range of an EMF reading, it will begin clicking and the dial will move to the rough area corresponding to the value of the EMF source, though the dial will sway up or down a bit due to its age. When EMF Level 5 is detected, the dial will quickly shoot all the way to the right, and sway a lot less down, staying at and far past the level 5 mark (staying at and below does not count)."
+                },
+                {
+                    "title": "Tier 2",
+                    "description": "The Tier II EMF Reader is the K2 Meter. The K2 is a small black box adorned with five colored LED lights, each one indicating a different EMF reading. The K2 has an effective range of 2 metres. When detecting an EMF emission, the reader will light up various numbers of its LEDs, accompanied with a pitch associated with the measured reading's level. If multiple EMF emissions are in range, the one with the highest EMF level will be indicated by the reader, though some fine positioning may be able to change which reading its being given out. When EMF Level 5 is detected, all five lights will be illuminated, and it will make a very high pitch tone."
+                },
+                {
+                    "title": "Tier 3",
+                    "description": "The Tier III EMF Reader is the EMF ParaMeter. It is similar in design to a PDA, with a blocky black plastic shell and a large center screen. It has a 3.5 meter range. It is able to read and track up to three interactions at once, giving the reading's EMF level by filling in dashes, and additionally reads out how far away that the reading occurred from the device (in meters) as well as the direction at which the interaction happened, allowing for the holder to quickly track down where the EMF emission is sourced from. When detecting something that is not EMF Level 5, it will create a beeping sound. When detecting EMF Level 5, all dashes will fill and a unique beeping noise that is higher pitched will play."
+                },
+                {
+                    "title": "EMF Lvel 5",
+                    "description": "If the ghost has EMF Level 5 as a possible piece of evidence, each EMF occurrence of Levels 2 or 3 has a 25% chance to be a Level 5 emission instead. EMF Level 5 does not necessarily indicate strong activity or immediate danger to the player."
+                },
+                {
+                    "title": "Tips",
+                    "description": "If players are looking for evidence of EMF Level 5, players should use the reader every time the ghost touches an object or surface, and within the 20 second period that the EMF will be active for. It may be possible to mishear a pitch for EMF 5, especially with certain speakers. Visually read off the EMF level to be certain. EMF Readers, especially Tier II readers, create a substantial amount of noise when malfunctioning, making discarded ones good beacons of the ghost's general location during a hunt."
+                }
+            ],
+            "emf_levels": [
+                {
+                    "emf_level": 1,
+                    "led_color_tier_2": "Blue",
+                    "ghost_activity": "None, default state"
+                },
+                {
+                    "emf_level": 2,
+                    "led_color_tier_2": "Green",
+                    "ghost_activity": "Interacting with an object. Using an ability"
+                },
+                {
+                    "emf_level": 3,
+                    "led_color_tier_2": "Yellow",
+                    "ghost_activity": "Throwing an object"
+                },
+                {
+                    "emf_level": 4,
+                    "led_color_tier_2": "Orange",
+                    "ghost_activity": "Manifestation"
+                },
+                {
+                    "emf_level": 5,
+                    "led_color_tier_2": "Red",
+                    "ghost_activity": "Evidence (25% chance)"
                 }
             ]
         },
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "Ghost Writing Book",
+            "description": "Used to obtain Ghost Writing from a ghost.",
+            "mechanics": "The Ghost Writing Book is a piece of equipment used to obtain Ghost Writing by placing it near a ghost.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "This paper notepad can be placed nearby a ghost to encourage some paranormal writing. Make sure to place it nearby any activity you see. Some ghosts may not notice the small notepad and pencil, so it may take some time before anything happens.",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "With nicer pages and a pen, ghosts seem to notice this book a bit more often than the previous version, making wait times a bit shorter for evidence to occur.",
+                    "level_required": 23
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "With its large profile, a mixture of high-quality materials and an ornate pen, this book has the highest chance to be written in by ghosts. It has a larger range than the previous two tiers so placing this book within a ghost's interaction range is much easier.",
+                    "level_required": 63
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Placement",
+                    "description": "A translucent preview of the Ghost Writing Book opened will appear while the player is aiming at a surface and holding down the Secondary Use key. The book will be placed when the key is released."
+                },
+                {
+                    "title": "Function",
+                    "description": "If Ghost Writing is an evidence type for the ghost, the ghost has a chance of interacting with the book by writing in it. When this happens, the book will slightly levitate and the pen will start to frantically scribble on the pages visually and audibly, followed by the pen being thrown on the ground. An EMF Level 2 reading is also created, with a 25% chance of it being EMF Level 5 instead if this is one of the ghost's types of evidence. The ghost will not write in the book if it is closed and/or out of range. A ghost can throw the Ghost Writing Book only if it does not have Ghost Writing among its types of evidence or when that piece of evidence is hidden. After being thrown, the book will close."
+                },
+                {
+                    "title": "Photo Rewards",
+                    "description": "Using a photo camera to take a photo of a ghost writing book with writing will yield a photo labelled as Ghost Writing, and reward up to $5 and 5XP, depending on the distance it was taken from. A photo labelled as Interaction, awarding up to $5 and 5XP, can be taken as well within 20 seconds of the book being written in."
+                },
+                {
+                    "title": "Strategies",
+                    "description": "If placed within the vision of an active video camera, you can use the Video Feed in the truck to watch ghost writing books and see if ghost writing is occurring. While it may be much more difficult to see if there are any markings in the pages on camera, more observant players may check if the pen is missing from the book to determine if ghost writing has occurred or not. A nearby sound sensor can be also used to monitor a Ghost Writing Book from the van; this will allow players to hear the sound of Ghost Writing occuring without having to actively monitor the book. The ghost will try to write in a book every 45 to 90 seconds. The higher the tier of the book is, the more likely it is to succeed. Writing will only happen if the ghost is in the interaction range of the book. Using both books to cover the whole room can increase the chance of getting Ghost Writing. If you notice that the ghost writing book has been thrown, check whether it already has writing before eliminating Ghost Writing as an evidence (that is not hidden, if applicable)."
                 }
             ]
         },
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "Spirit Box",
+            "description": "Used to communicate with a ghost through questions.",
+            "mechanics": "The Spirit Box is a piece of equipment used to find Spirit Box evidence. It creates white noise by constantly cycling through various radio frequencies, which allows the ghost to communicate with players.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "When turning this Spirit Box on, it will begin to scan through different radio frequencies. Make sure to stand near to any paranormal activity, turn off any lights in that room, and ask some questions in the hope of a response. If the question has been heard, a red light will flash on the Spirit Box, if it flashes white, you've got a response. Try asking 'Where are you?' or 'Are you friendly?'. Be warned, you may not like the answer you receive.",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "This more modern Spirit Box has a higher-quality speaker and is much more efficient at scanning through frequencies, making paranormal responses easier to deciper. If a question has been heard, a black X will flash on the screen, if you get a response, the small ghost icon will flash instead.",
+                    "level_required": 27
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "When turned on, this Spirit Box scans both frequencies of radio at the same time, increasing the chance of picking up a paranormal response when asking questions. It also has a built-in noise filter, to reduce the amount of static you hear between interactions. If a question is heard and no response is given, the RESPONSE LEDs will flash red. If a reply is given, the LEDs will flash white in time with the sound.",
+                    "level_required": 54
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Usage",
+                    "description": "The Spirit Box can be turned on via toggle. The Spirit Box emits a constant static noise while active. The microphone LED/icon will indicate whether or not the Spirit Box is listening (when Push To Talk or Toggle is used), or receiving microphone input (when Voice Activation is used)."
+                },
+                {
+                    "title": "Questioning",
+                    "description": "There are three ways to probe for a response via the Spirit Box: If using voice chat, the Spirit Box will recognise any valid question asked by the player... If using the text-based UI, the UI will appear upon turning on the Spirit Box. Players can then click to select one of 3 questions. The player can exit the UI by turning off the Spirit Box... If the player selects Vosk, Windows, or None as the voice recognition method, having voice chat active (by holding the push-to-talk button or selecting Voice Activation) will enable the Spirit Box to automatically 'ping' a question every 10 seconds. If nothing happens upon asking a question, it is possible the game did not recognise any valid phrase, or the player's voice recognition is not working properly. Note that the microphone LED/icon shows whether the game is picking up the player's microphone only if the player's voice chat option is set to Voice Activation. When using the Windows voice recognition system, this does not necessarily mean that the system is working properly."
+                },
+                {
+                    "title": "Answering",
+                    "description": "When a question is successfully registered, the Spirit Box will return one of two results: If all the relevant conditions are met and the chance is successful, the ghost LED will turn white on a Tier I Spirit Box, the ghost icon will display on a Tier II Spirit Box, the response LEDs will turn white on a Tier III Spirit Box, and a distorted voice line will be heard through the Spirit Box. This is considered as evidence of Spirit Box... If the ghost LED turns red on a Tier I Spirit Box, the 'X' icon displays on a Tier II Spirit Box, or the response LEDs turn red on a Tier III Spirit Box, one or more of the conditions listed below have not been met."
+                },
+                {
+                    "title": "Evidence Requirements",
+                    "description": "In order to get a successful Spirit Box response from the ghost, all of the following is required: The ghost has Spirit Box as one of its types of evidence, The player must be in the same room as the ghost, The player must be within a certain range of the ghost (3 metres with a Tier I, 4 metres with a Tier II, and 5 metres with a Tier III), All lights in said room must be off. Light emitted from equipment, including electronic and non-electronic equipment, does not affect this. Lights in other rooms, including rooms or hallways that are directly adjacent, may be left on, and any doors between the rooms can stay open, Ghosts which respond only to 'people who are alone' will respond only if there is a single person in the room at the moment the question is asked. If the ghost is noted to respond to everyone, the number of people in the room does not affect the ghost's ability to respond. If the difficulty has a setup time (e.g. Amateur and Intermediate), this will be indicated on the corkboard and in the journal, If all other conditions are met, there is a chance of the ghost responding per question asked. The chance depends on the tier of the Spirit Box. If the player is particularly unlucky, a combination of these factors may cause the Spirit Box to repeatedly turn the LEDs red, or show an 'X', despite the ghost having Spirit Box as one of its evidences. Other than the need for the Spirit Box to be near the player, there are no further checks on where the Spirit Box itself is."
+                },
+                {
+                    "title": "Interference",
+                    "description": "The Spirit Box is considered an electronic equipment. When interfered with, all the LEDs/icons will flicker rapidly. During a hunt, holding an active Spirit Box within 7.5 metres of a ghost on the same floor will attract it to the player. Note that the ghost may still respond audibly if the player asks questions while the Spirit Box is being interfered with. This also counts as Spirit Box evidence."
+                },
+                {
+                    "title": "Non-Evidence",
+                    "description": "The following does not count as evidence of Spirit Box: The ghost touching a door or an object, The ghost touching a door or an object (One ghost vocalisation involves the ghost repeatedly saying certain words; this is also not evidence of Spirit Box), Any other phenomenon not related to the Spirit Box."
+                },
+                {
+                    "title": "Ghost-Specific Abilities",
+                    "description": "The Deogen has a 33% chance to respond with heavy breathing instead of a regular response if the player is standing within 1 metre of the ghost. The Moroi will curse the player who asked a question if they successfully obtain a response. The cursing response will not sound any different."
+                },
+                {
+                    "title": "Tips",
+                    "description": "It is recommended that the Spirit Box be used early on in the investigation as soon as the presumed favourite room has been found as using it effectively required a player to remain alone in the dark with the ghost for several seconds, thus considerably reducing their sanity and allowing a potential hunt to start. This is especially true for higher difficulties. As the Spirit Box emits a constant static when turned on, it may interfere with the ability to hear ghost activities properly. Turning it off is recommended when not in use. Ghost replies on the Spirit Box do not count as ghost events or interactions."
                 }
             ]
         },
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "Thermometer",
+            "description": "Displays the local temperature of a room. Can be used to detect Freezing Temperatures.",
+            "mechanics": "The thermometer is a piece of starter equipment used to read the temperatures in the nearby environment, and is the primary tool for detecting Freezing Temperatures.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "While moving through locations, ghosts will drop the temperature of the room they are currently in. Carry one of these thermometers into a room you think the ghost may be in and check the reading.",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "This Digital Thermometer is much faster at reading temperatures. Simply hold it, then hold Use and wait for it to scan the temperature of the room you are standing in.",
+                    "level_required": 36
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "An Air Thermometer that can scan temperatures much faster than its predecessor. It works the same way that the previous version did, just Grab one and hold Use to scan and receive a reading.",
+                    "level_required": 64
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Tier 1",
+                    "description": "The Tier I Thermometer passively reads out the temperature of the last room in which the player held it, with the red liquid (alcohol) within slowly rising or falling depending on if the room is colder or warmer than where it was before. While very slow to update, with a rate of 0.33C per second, it benefits over its upgraded versions by being both completely passive, and is not an electronic item that could attract the ghost while held during a hunt. The thermometer reads out both Celsius (C) and Fahrenheit (F), with Celsius values on the left side and Fahrenheit on the right. The reading will fluctuate from the actual value by a maximum of +3 degrees, in Celsius."
+                },
+                {
+                    "title": "Tier 2",
+                    "description": "The thermometer can be toggled to turn on the display. Holding down the use button will make the thermometer read the player's current room's temperature in degrees Celsius (C) every 2.5 seconds. This can be changed to Fahrenheit (F) in the settings. The reading will fluctuate from the actual value by a maximum of +3 degrees, in Celsius."
+                },
+                {
+                    "title": "Tier 3",
+                    "description": "The thermometer can be toggled to turn on the display. Holding down the use button will make the thermometer read the player's current room's temperature in degrees Celsius (C) every 2.5 seconds. This can be changed to Fahrenheit (F) in the settings. The reading will fluctuate from the actual value by a maximum of +3 degrees, in Celsius. By default, the reading will be in degrees Celsius (C); this can be changed to Fahrenheit (F) in the settings. The reading will fluctuate from the actual value by a maximum of +2 degrees, in Celsius."
+                },
+                {
+                    "title": "Tips",
+                    "description": "Temperatures readings below 5C (41F) is generally an indication that the ghost is in (or was recently in) the room. This marker is less useful in non-clear weather on Maple Lodge Campsite, or when the fuse box has not been turned on long enough to raise temperatures. The tier II and III thermometers will continuously give out new readings when players hold Use after the initial reading while the tier I thermometer will refresh constantly, although at a much slower speed. When using thermometers thrown on the floor, turning it off and on again or moving between rooms before attempting to read the temperature may help to reduce the risk of errors."
                 }
             ]
         },
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "UV Light",
+            "description": "Used to reveal fingerprints and footprints created by ghosts.",
+            "mechanics": "The UV light is a buyable starter item used to detect Ultraviolet evidence such as fingerprints and footprints.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "This UV flashlight has a long-distance narrow beam of light, perfect for quickly searching for fingerprints and footprints without having to move too far. It also charges prints much faster than the Glowstick.",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "Use this Glowstick to grant an area light that slowly fades over time. Once the light has dulled, give it another shake to replenish some of the light. Ghosts can leave behind fingerprints and footprints in certain situations, use your UV light to reveal these. Shining UV light on these will charge them up over a frew seconds. Once charged you can remove the UV light and still have visibility of the prints, perfect for taking a photo.",
+                    "level_required": 21
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "With a much wider output and brighter source, this flashlight will allow even faster charging and finding of UV fingerprints or footprints.",
+                    "level_required": 56
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Usage",
+                    "description": "The UV light can be enabled using the toggle key while holding it. The UV light can be activated at the same time as a standard flashlight, but any visible fingerprints or footprints may contrast poorly and be hard to see under their light. The UV light projects purple light and this light is weak relative to flashlights. The Tier I and III UV Lights will not work if Flashlights are turned off in custom difficulty settings. Ghosts that give ultraviolet evidence can leave prints on certain surfaces doors, light switches, and windows. They may also leave prints on floors after stepping through salt. These prints become visible and green when a UV light is shone towards them. The Tier I UV Light is a flashlight with a narrow spotlight. It counts as an electronic equipment. So it will flicker rapidly near a manifesting ghost and will attract the ghost during a hunt when it is nearby. Tier II UV Light is a small glowstick. When activated, it glows brightly for 1 minute, then fades to half intensity over the next 10 seconds. After dimming, the glowstick can be shaken with primary use to revitalize the light it produces. The tier III UV Light is also a flashlight. However, it has a much wider spotlight and a lesser charge time than tier I. It also counts as an electronic equipment."
+                },
+                {
+                    "title": "Tips",
+                    "description": "As of patch 0.9.0, UV prints must be illuminated by a UV light to take a successful photo. Many regard the Tier II UV Light as superior to the Tier I and III versions, due to the fact that the player can simply throw the glowstick on the floor and it will continuously illuminate any prints nearby, and it is also not an electronic, allowing the player to use it as a light source during hunts without the ghost detecting it."
                 }
             ]
         },
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "Video Camera",
+            "description": "Creates a video feed, which is relayed to the van's computer. Used to detect Ghost Orbs.",
+            "mechanics": "When a video camera is picked up, the flip screen will open automatically. If the player is inside the van, they must get off the van for the flip screen to open. The video camera can be used handheld with its built-in display or placed on a flat surface or a tripod. Holding the placement key will show a translucent preview of the video camera and its facing direction, which can be adjusted while holding the placement key by moving the mouse left and right. Be aware that even though certain spots are shown as valid, the camera may tip over or fall due to the geometry or other objects placed on the surface. The video camera will automatically start streaming its video feed to the computer when open or placed. When the ghost manifests during a ghost event or a hunt, it will cause interference on all nearby video cameras and distort the image on both the built-in display and the video feed. Cameras of higher Tier with a better image quality will be significantly less impacted by ghost interference, aiding players in observing or tracking the ghost during a ghost event or a hunt. Ghosts may occasionally knock over placed down video cameras within a certain range, forcing players to actively tend to them. Placing a camera on a tripod will reduce the probability of the ghost knocking it over. The stability provided by the tripod will depend on its Tier. Night vision can be toggled while holding the active video camera or via the computer keyboard. When night vision is turned on, any Ghost Orbs present can be seen through the video camera.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "This vintage camcorder may be old, but it's perfect for hunting down Ghost Orbs. Grab one and enter the location and start searching for a small spot of light dancing around in the room. Make sure to turn on your night vision first!",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "A video camera with a higher quality screen, better night vision, and more resistance against paranormal interference. It should make finding those sneaky Ghost Orbs just that little bit easier.",
+                    "level_required": 33
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "A large cinema-grade video camera, it's shoulder-mounted and heavy, but worth it for the additional visibility.",
+                    "level_required": 61
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Tips",
+                    "description": "The video camera's night vision function can be very useful when using a D.O.T.S Projector as the ghost's silhouette may be easier to see with night vision. The video camera can also be used to maintain surveillance on areas such as hallways, rooms, and the fuse box. This can allow for easy viewing of certain stationary evidence like Fingerprints, Ghost Writing, EMF Level 5, salt, or D.O.T.S Projector. However, the video feed becomes extremely distorted whenever the ghost manifests during a Ghost Event or a hunt, making observation very difficult. It is recommended to turn your flashlight (and room lights) off while using night vision."
                 }
             ]
         },
         {
-            "name": "",
-            "description": "",
-            "mechanics": "",
+            "name": "Flashlight",
+            "description": "Provides a basic source of light.",
+            "mechanics": "The flashlight is an essential piece of equipment that is used to illuminate the area, usually in front of the player.",
             "tiers": [
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 1,
+                    "description": "A retro metallic flashlight, which provides a small amount of light, just enough to get around.",
+                    "level_required": 0
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 2,
+                    "description": "This flashlight emits a much brighter beam of light.",
+                    "level_required": 19
                 },
                 {
-                    "tier": "",
-                    "description": "",
-                    "level_required": ""
+                    "tier": 3,
+                    "description": "Projecting a much wider cone of light, this flashlight is perfect for large rooms and open spaces.",
+                    "level_required": 35
                 }
             ],
             "notes": [
                 {
-                    "title": "",
-                    "description": ""
+                    "title": "Usage",
+                    "description": "Toggling on an equipped flashlight will provide a small conical range of light to improve visibility of the environment. The flashlight can also be put on the shoulder by cycling to another item, allowing its use offhand. When on the shoulder, the flashlight can be turned on or off by pressing the Special key. Non-VR players can carry only one flashlight at a time, while VR players can have any number of flashlights held or placed onto the toolbelt. Illuminated flashlights will continue providing light from the hips until a player manually turns it off. While on the toolbelt, emitted light will track the player's head movement. Up to 4 flashlights can be brought on a single contract. One flashlight is always provided per contract as a starter equipment. During a hunt, a flashlight will rapidly flicker if a ghost is within 10 metres (15 metres if it is a Raiju) and on the same floor. Like other electronic equipment, carrying a lit flashlight within 7.5 metres of the ghost during a hunt on the same floor will attract it."
+                },
+                {
+                    "title": "Tips",
+                    "description": "Extra flashlights can be dropped within dark areas of the map to provide illumination that remains unaffected by the state of the fuse box (though is subject to electronic interference during a hunt). This may be helpful if a ghost tampers with the lights and/or fuse box frequently."
                 }
             ]
         },
@@ -860,19 +971,19 @@
             "mechanics": "A crucifix can be held in the player's hand, thrown, or placed; the crucifix works in all three situations. Holding F will show the default effective range for the crucifix; this is a translucent sphere with a radius depending on its tier level (even if the ghost has a different effective range): Tier I: 3 metres, Tier II: 4 metres, Tier III: 5 metres. When the ghost attempts to initiate a hunt within the crucifix's range, the hunt will fail to begin, and a charge will be used. The ghost is then teleported back to its favourite room. Each time a crucifix successfully prevents a hunt, an EMF Level 2 reading is created, with a 25% chance for this to be EMF Level 5 if it is one of the ghost's evidences. For the Demon, the crucifix's effective range is increased by 50% for each tier: Tier I: 4.5 metres, Tier II: 6 metres, Tier III: 7.5 metres. The Tier I crucifix only has one charge, while tier II and tier III both have two charges. Each time it blocks a hunt attempt, a burning effect will appear, and the crucifix will glow visually before fading slightly darker. On first use, one arm of the crucifix will disappear. On second use, more parts of the crucifix will disappear. If a player-held crucifix successfully prevents a hunt attempt, it will automatically be thrown on the ground. After the crucifix is completely burnt, the crucifix will be useless and have no further effect on the ghost. In addition, the crucifix will not work if: The ghost is not within the specified range (even if the crucifix is located in the favourite room), A cursed possession is used to initiate a cursed hunt (Except for in the case of an unused tier III crucifix, which can be used to stop a cursed hunt at the cost of both its charges), A hunt has already started/is in progress. Each time a crucifix is used, the ghost must wait a minimum of 25 seconds (20 seconds for a Demon) before attempting to initiate another hunt. The crucifix range is not limited by any obstacle such as walls and doors. This includes exterior walls, which means that it is possible for crucifixes to be used outside provided the ghost is within its range inside the investigation area. 42 Edgefield Road is a good example of this, where a ghost near the front of the house, even upstairs, could possibly use up a crucifix still hanging on the van wall.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "This crucifix can be held or placed to stop the ghost from initiating a single attack. Make sure to keep it placed near any activity you may find.",
-                    "level_required": "8"
+                    "level_required": 8
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "A metal crucifix that can be used to block two attacks, with a larger range. Remember to keep it in close proximity to any activity you come across.",
-                    "level_required": "37"
+                    "level_required": 37
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "This crucifix has an even larger range than its previous version. Additionally, an unused crucifix can prevent a cursed hunt, consuming both uses.",
-                    "level_required": "90"
+                    "level_required": 90
                 }
             ],
             "notes": [
@@ -892,19 +1003,19 @@
             "mechanics": "It is a deployable light source that can be lit using a source of fire such as an igniter or another firelight. It can be used to continuously light up a room with a warm, orange glow, and mitigate sanity drain from darkness, until it eventually burns out. Ghosts tend to blow out nearby firelights, making them effective at checking if a ghost is nearby.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "This small candle will provide light and some sanity loss prevention, but only for a while, the wax burns down quite fast!",
-                    "level_required": "12"
+                    "level_required": 12
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "With three candles instead of one, the light provided is much brighter, longer range and lasts longer. Additionally, this Firelight doesn't need to be held to gain its effects, so you can place it and stand nearby to still receive the sanity benefits!",
-                    "level_required": "47"
+                    "level_required": 47
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "This lantern will last for the entirety of a contract, so there's no worry of it going out when you need it most. Just like its predecessor you can stand nearby to gain its effects. Lastly, it's waterproof so it even works in the rain!",
-                    "level_required": "79"
+                    "level_required": 79
                 }
             ],
             "notes": [
@@ -940,19 +1051,19 @@
             "mechanics": "The Head Gear is a type of equipment in Phasmophobia. Its specific function varies based on its equipment tier, though generally it improves the ability to investigate without a Flashlight.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "Strapping this small camera to your head allows your teammates to watch a live video feed of your view from the safety of the truck, great for multitasking and catching things that you may miss! To toggle the device on and off, hold the Special keybind for a couple of seconds.",
-                    "level_required": "13"
+                    "level_required": 13
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "A small head-mounted flashlight that doesn't take up an inventory slot. The only downside being the light isn't overly bright or wide. You can toggle it on and off by holding the Special keybind for a short period.",
-                    "level_required": "49"
+                    "level_required": 49
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "A pair of Night Vision goggles, allowing you to see in the dark without the need for a flashlight. Be warned though, your vision may get distorted if within range of an active ghost, rendering the goggles useless. To toggle the device on and off, hold the Special keybind for a couple of seconds.",
-                    "level_required": "82"
+                    "level_required": 82
                 }
             ],
             "notes": [
@@ -980,19 +1091,19 @@
             "mechanics": "An igniter is an item used to light incense, firelights, summoning circles, and campfires. It emits a small amount of light when activated and held by the player.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "These matches are perfect for lighting Firelights and Incense, but remember, with only ten uses you'll run out fast! They can also be used as a small light source, just make sure to not burn your fingers.",
-                    "level_required": "12"
+                    "level_required": 12
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "A gas lighter. It provides a little more light than matches and lasts a lot longer. You can see the liquid inside it drain as you use it, make sure you have enough left when you're in a pinch!",
-                    "level_required": "41"
+                    "level_required": 41
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "This Lighter could last you for an entire contract, as long as you're not wasting it! With a larger flame, the light it provides is brighter and has larger range, perfect for those dark getaways during an attack.",
-                    "level_required": "57"
+                    "level_required": 57
                 }
             ],
             "notes": [
@@ -1012,19 +1123,19 @@
             "mechanics": "Incense is a purchasable item that will deter the ghost from hunting for a period of time when burned.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "You can light Incense with any Igniter to stop a ghost from initiating a hunt for a long duration, additionally, you can use it during a hunt when near a ghost to disorient it for a few seconds.",
-                    "level_required": "14"
+                    "level_required": 14
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "Much more sage has been used to create this incense bundle, allowing for a longer burn time, keeping you safer for longer during attacks. Additionally, it will slow the movement of the ghost for part its effect duration.",
-                    "level_required": "42"
+                    "level_required": 42
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "With a much larger range and longer burn time, you can ward off ghosts much more safely when attacked. When the ghost is initially repelled it will be stunned, halting it's movement for a short period.",
-                    "level_required": "85"
+                    "level_required": 85
                 }
             ],
             "notes": [
@@ -1056,19 +1167,19 @@
             "mechanics": "The motion sensor is a piece of equipment that can help in tracking the movement of the ghost.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "Place this motion sensor on walls or the floor and it will flash any time something moves in front of it, even things you can't see.",
-                    "level_required": "5"
+                    "level_required": 5
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "With two different modes, a longer range, and a sound indicator, this sensor is perfect for paranormal tracking. You can toggle the laser shape by Interacting with the sensor after it has been placed.",
-                    "level_required": "45"
+                    "level_required": 45
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "Place this Motion Sensing camera on the floor near to any ghost activity you may find. When activated, it will turn and flash a bright light whenever a ghost enters or exits its detection range.",
-                    "level_required": "74"
+                    "level_required": 74
                 }
             ],
             "notes": [
@@ -1100,19 +1211,19 @@
             "mechanics": "The parabolic microphone, sometimes referred to as a paramic, is a piece of equipment in Phasmophobia. It can detect sound through walls and at a great distance. It serves as a portable version of the sound sensor. Although generally disregarded for smaller maps, it may come in handy on larger ones (such as Brownstone High School and Sunny Meadows Mental Institution) for locating the ghost.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "While using the Parabolic Microphone and attached headphones, you will be able to hear sounds further away than normal, depending on which way you are aiming the microphone.",
-                    "level_required": "7"
+                    "level_required": 7
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "We've improved this Parabolic Microphone with a couple upgrades; a better sensor and a small screen. Turning it on will allow you to hear distance sounds, as well as get a visual reading on how loud that sound is.",
-                    "level_required": "31"
+                    "level_required": 31
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "This Parabolic Microphone has been improved with a visual sound indicator. Each time a sound is detected within the microphone's range, a visual indicator will be shown on the screen, including distance and volume, allowing you to easily track where the sound is coming from.",
-                    "level_required": "72"
+                    "level_required": 72
                 }
             ],
             "notes": [
@@ -1148,19 +1259,19 @@
             "mechanics": "The photo camera is a piece of equipment in Phasmophobia. It is a digital camera that can be used to take pictures of objects in-game. While it is not used for gathering evidence, it is essential for acquiring photo rewards, as well as being necessary for certain objectives and tasks.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "You can use this camera to take photos of any evidence you may find. It will only interfere with the ghost during the photo taking process, so be careful when you decide to snap a picture. For more information on how to take photos check the 'Photos' section in you Journal.",
-                    "level_required": "3"
+                    "level_required": 3
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "With this digital photo camera, you can snap pictures of evidence and paranormal entities much faster than the previous Tier.",
-                    "level_required": "25"
+                    "level_required": 25
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "This top-of-the-range camera provides the lowest delay time between photos, allowing quick evidence gathering. Additionally, it's been modified to be less susceptible to paranormal entities causing interference with the screen during manifestations.",
-                    "level_required": "70"
+                    "level_required": 70
                 }
             ],
             "notes": [
@@ -1180,19 +1291,19 @@
             "mechanics": "Salt is a purchasable item used to place salt piles. Ghosts can step in the salt pile, and it can be used to check for Ultraviolet evidence, or to obtain photo rewards.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "While holding this container, you can place piles of Salt on the floor in the hope of tracking the ghost. We recommend placing them in doorways and near turns in hallways or rooms for the highest chance of getting a reaction.",
-                    "level_required": "9"
+                    "level_required": 9
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "This larger container holds more salt than its predecessor, allowing you to place long lines of salt to easily block wider passages.",
-                    "level_required": "43"
+                    "level_required": 43
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "This salt is so powerful it can affect a ghost's mobility in two ways. Whilst a ghost is acting passively, these lines will act like a barrier, forcing the ghost to turn around when walking into one. Great for trapping those roaming ghosts in a room so you can find your evidence. If it’s during an attack, the ghost will be slowed, giving you extra time to make your escape.",
-                    "level_required": "68"
+                    "level_required": 68
                 }
             ],
             "notes": [
@@ -1228,19 +1339,19 @@
             "mechanics": "Sanity Medication is a purchasable item that is used to replenish a player's sanity.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "Drink this bottle of vintage snake oil to restore a portion of your sanity. It will take a few seconds to complete the restoration, and the amount restored will depend on the difficulty you are playing.",
-                    "level_required": "16"
+                    "level_required": 16
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "Taking these pills will restore your Sanity faster. You can take several pots to increase the amount of Sanity restored over its duration.",
-                    "level_required": "39"
+                    "level_required": 39
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "This Adrenaline Shot will restore your sanity much faster than the previous two versions, additionally, you will not lose any sprint stamina for the entire duration of its effects.",
-                    "level_required": "77"
+                    "level_required": 77
                 }
             ],
             "notes": [
@@ -1268,19 +1379,19 @@
             "mechanics": "The Sound Sensor is a piece of Equipment in Phasmophobia. It detects sounds in a large area around it, allowing the player to track potential ghost activity in combination with the Sound Monitor.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "Place these sound sensors down in locations where you want to track any audio interactions. Once placed, return to the Truck, you can listen to the remote playback whilst checking the Sound Sensor screen to see if any of the Sensors receive any readings.",
-                    "level_required": "11"
+                    "level_required": 11
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "This sound sensor has been improved to feature three different size settings, togglable with a size button on the Sound Sensor screen in the truck.",
-                    "level_required": "32"
+                    "level_required": 32
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "The tripod has rotational joints on it, allowing you to Interact with it to change the shape of the Sound Sensor. Each shape is represented by the directions that the microphones are facing: Forward: Cone / Outward: Sides / Inward: Sphere",
-                    "level_required": "58"
+                    "level_required": 58
                 }
             ],
             "notes": [
@@ -1300,19 +1411,19 @@
             "mechanics": "Tripods are used to mount video cameras, essentially acting as a portable surface for them.",
             "tiers": [
                 {
-                    "tier": "1",
+                    "tier": 1,
                     "description": "Attach a Video Camera to this Tripod by Placing it on top. You can then carry the Tripod and Place it in locations that may not have a good surface for viewing paranormal activity. Ghosts may interfere with your placed cameras and attempt to knock them over, make sure to reset them back up if they are pushed to the floor.",
-                    "level_required": "10"
+                    "level_required": 10
                 },
                 {
-                    "tier": "2",
+                    "tier": 2,
                     "description": "This Tripod has been upgraded with a rotational motor. While viewing the Video Camera's view from the truck, you can use the on-screen controls to rotate the tripod motor, giving you a new angle.",
-                    "level_required": "34"
+                    "level_required": 34
                 },
                 {
-                    "tier": "3",
+                    "tier": 3,
                     "description": "Like its previous versions, this Tripod is similar except much sturdier, those pesky ghosts should knock it over much less frequently.",
-                    "level_required": "62"
+                    "level_required": 62
                 }
             ],
             "notes": [
