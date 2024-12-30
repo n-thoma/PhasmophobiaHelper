@@ -1,0 +1,223 @@
+{
+    "ghost_data": {
+        "ghosts": [
+            {
+                "ghost_id": 1,
+                "name": "Spirit",
+                "description_id": 1,
+                "strength_id": 0,
+                "weakness_id": 1,
+                "evidence_ids": [
+
+                ],
+                "characteristics_ids": [
+
+                ],
+                "test_id": 1
+            },
+            {
+                "ghost_id": 2,
+                "name": "Wraith",
+                "description_id": 2,
+                "strength_id": 1,
+                "weakness_id": 2,
+                "evidence_ids": [
+
+                ],
+                "characteristics_ids": [
+                    1
+                ],
+                "test_id": 2
+            },
+            {
+                "ghost_id": 3,
+                "name": "Phantom",
+                "description_id": 3,
+                "strength_id": 2,
+                "weakness_id": 3,
+                "evidence_ids": [
+
+                ],
+                "characteristics_ids": [
+                    2, 3
+                ],
+                "test_id": 3
+            }
+        ],
+        "ghost_descriptions": [
+            {
+                "description_id": 1,
+                "description": "These are very common ghosts. They are very powerful, but passive, only attacking when they need to. They defend their place of death to the utmost degree, killing anyone that is caught overstaying their welcome.",
+                "ghost_id": 1
+            },
+            {
+                "description_id": 2,
+                "description": "This ghost are one of the most dangerous ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
+                "ghost_id": 2
+            },
+            {
+                "description_id": 3,
+                "description": "A Phantom is a ghost that can possess the living, inducing fear into those around it. They are most commonly summoned from Ouija Boards.",
+                "ghost_id": 3
+            }
+        ],
+        "ghost_strengths": [
+            {
+                "strength_id": 1,
+                "description": "Cannot be tracked by footsteps. Will occasionally teleport to a random player.",
+                "ghost_id": 2
+            },
+            {
+                "strength_id": 2,
+                "description": "Looking at this ghost will lower the player's sanity considerably. Will occasionally walk to a random player.",
+                "ghost_id": 3
+            }
+        ],
+        "ghost_weaknesses": [
+            {
+                "weakness_id": 1,
+                "description": "Incense is more effective, preventing a hunt for longer.",
+                "ghost_id": 1
+            },
+            {
+                "weakness_id": 2,
+                "description": "Will not step in salt.",
+                "ghost_id": 2
+            },
+            {
+                "weakness_id": 3,
+                "description": "Taking a photo of the Phantom will cause it to briefly disappear. Less visible during hunts.",
+                "ghost_id": 3
+            }
+        ],
+        "ghost_characteristics": [
+            {
+                "characteristic_id": 1,
+                "name": "Teleportation",
+                "description": "This ghost will randomly teleports to a player's location which causes the EMF Reader to randomly spike.",
+                "ghost_id": 2
+            },
+            {
+                "characteristic_id": 2,
+                "name": "Sanity",
+                "description": "Looking at this ghost will lower the player's sanity more than other ghosts.",
+                "ghost_id": 3
+            },
+            {
+                "characteristic_id": 3,
+                "name": "Invisibility During Hunts",
+                "description": "During a hunt, the this ghost will be visible for a shorter amount of time than other ghosts.",
+                "ghost_id": 4
+            }
+        ],
+        "ghost_tests": [
+            {
+                "test_id": 1,
+                "name": "Incense Test",
+                "description": "When you smudge a this ghost type, it will not be able to hunt again for another 180 seconds (3 minutes). If a ghost hunts before 180 seconds, it is not this ghost type. If it hunts after the 180 seconds, it CAN be this ghost type but it also may not.",
+                "ghost_id": 1
+            },
+            {
+                "test_id": 2,
+                "name": "Salt Test",
+                "description": "This ghost type will not step in salt, so if you see footprints in salt, it is not this ghost type.",
+                "ghost_id": 2
+            },
+            {
+                "test_id": 3,
+                "name": "Photo Test",
+                "description": "Taking a photo of this ghost type will cause it to disappear during hunts, ghost events, and a D.O.T.S. photo. Check the photo to see if the ghost is visible or not. If the photo is empty but is a '3 Star' ghost photo, it is this ghost type.",
+                "ghost_id": 3
+            }
+        ]
+    },
+    "evidence_data": {
+        "evidence": [
+            {
+                "evidence_id": 1,
+                "name": "D.O.T.S. Projector",
+                "description_id": 1,
+                "mechanics_id": [
+                    1, 2, 3, 4, 5
+                ],
+                "ghost_ids": [
+
+                ],
+                "equipment_id": 1 
+            }
+        ],
+        "evidence_mechanics": [
+            {
+                "mechanic_id": 1,
+                "name": "D.O.T.S. Functionality",
+                "description": "Ghosts with D.O.T.S evidence will occasionally enter a 'D.O.T.S state'. During this, a faint silhouette of the ghost will be visible only when it passes through the laser grid. The ghost will also walk towards the nearest player if there is one in the same room, or towards a random waypoint if no players are nearby. While these silhouettes are visible to the naked eye (unless the ghost is a Goryo), a video camera with night vision may allow for better visibility. This also means that D.O.T.S can be tracked simultaneously alongside Ghost Orbs. Dead players cannot see the D.O.T.S state by any means.",
+                "evidence_id": 1
+            },
+            {
+                "mechanic_id": 2,
+                "name": "D.O.T.S. Banshee",
+                "description": "The Banshee will try to walk towards its targeted player, even if another player is closer to it.",
+                "evidence_id": 1
+            },
+            {
+                "mechanic_id": 3,
+                "name": "D.O.T.S. Goryo",
+                "description": "If the ghost is a Goryo, the silhouette will not be visible to the naked eye and can only be seen when the following two conditions are fulfilled: 1) There are no players in the same room as the Goryo when it enters a D.O.T.S state. 2) The D.O.T.S silhouette must be viewed with a video camera.",
+                "evidence_id": 1
+            },
+            {
+                "mechanic_id": 4,
+                "name": "D.O.T.S. Phantom",
+                "description": "The Phantom will physically disappear if a picture of it is taken while in a D.O.T.S state.",
+                "evidence_id": 1
+            },
+            {
+                "mechanic_id": 5,
+                "name": "D.O.T.S. Photo Rewards",
+                "description": "The D.O.T.S silhouette can be photographed and will show up as Ghost, rewarding up to $20 and 20 XP depending on the photo distance. This photo will complete the 'Capture a photo of the Ghost' objective without needing a Ghost Event to occur.",
+                "evidence_id": 1
+            }
+        ],
+        "evidence_descriptions": [
+            {
+                "description_id": 1,
+                "description": "D.O.T.S Projector is a type of evidence in Phasmophobia, used to determine which ghost is haunting a location. It is detected by placing a D.O.T.S Projector in close proximity of a ghost, and allowing it to pass through it.",
+                "evidence_id": 1
+            }
+        ]
+    },
+    "equipment_data": {
+        "equipment": [
+            {
+                "equipment_id": 0,
+                "name": "",
+                "description_id": 0,
+                "mechanics_ids": [
+
+                ],
+                "evidence_id": 0,
+                "tier_ids": [
+
+                ],
+                "price": 0,
+                "is_starter": false
+            }
+        ],
+        "equipment_mechanics": [
+            {
+                "mechanic_id": 0,
+                "name": "",
+                "description": "",
+                "equipment_id": 0
+            }
+        ],
+        "equipment_descriptions": [
+            {
+                "description_id": 0,
+                "name": "",
+                "description": "",
+                "equipment_id": 0
+            }
+        ]
+    }
+}

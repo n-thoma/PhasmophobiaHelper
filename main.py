@@ -195,6 +195,24 @@ phasmophobia_assistant = client.beta.assistants.create(
                     "required": ["arg"]
                 }
             }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "get_ghost_evidence",
+                "description": "Outputs the evidence needed to prove a ghost of a given name. Data includes: evidence needed to prove the ghost.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "arg": {
+                            "type": "string",
+                            "enum": ["Spirit", "Poltergeist", "Mare", "Demon", "Yokai", "Myling", "Raiju", "Moroi", "Wraith", "Banshee", "Revenant", "Yurei", "Hantu", "Onryo", "Obake", "Deogen", "Phantom", "Jinn", "Shade", "Oni", "Goryo", "The Twins", "The Mimic", "Thaye"],
+                            "description": "The name of the ghost you want to learn about."
+                        }
+                    },
+                    "required": ["arg"]
+                }
+            }
         }
     ] 
 )
@@ -217,6 +235,13 @@ def get_ghost_data(ghost_name):
     for ghost in data["ghosts"]:
         if ghost["name"].lower() == ghost_name.lower():
             return ghost
+
+
+# Gets ghost evidence from given name
+def  get_ghost_evidence(ghost_name):
+    for ghost in data["ghosts"]:
+        if ghost["name"].lower() == ghost_name.lower():
+            return ghost["evidence"]
 
 
 # Gets evidence json data from the given name
@@ -320,6 +345,7 @@ def get_cursed_item_data(item_name):
     for item in data["cursed_items"]:
         if item["name"].lower() == item_name.lower():
             return item
+    #return f"MESSAGE TO THE AI: '{item_name} is not a cursed item. Try using a different function!."
         
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -354,6 +380,8 @@ class EventHandler(AssistantEventHandler):
 
             print(tool)
             print(output_str)
+            print()
+            print()
 
             # Append output to tool_outputs arr
             tool_outputs.append({"tool_call_id": tool.id, "output": str(output_str)})
@@ -367,7 +395,7 @@ class EventHandler(AssistantEventHandler):
                 thread_id=thread.id,
                 run_id=run_id,
                 tool_outputs=tool_outputs,
-                event_handler=EventHandler(),
+                event_handler=EventHandler()
         ) as stream:
             for text in stream.text_deltas:
                 print(text, end="", flush=True)
@@ -401,7 +429,6 @@ if 'chat_history' not in streamlit.session_state:
 # Thread ID container (store id in session state to preserve thread)
 if 'thread_id' not in streamlit.session_state:
     streamlit.session_state.thread_id = None
-
 
 streamlit.set_page_config(page_title="G.H.O.S.T.", page_icon="👻")
 streamlit.title("Ghost Hunting Operations and Survival Tool")
