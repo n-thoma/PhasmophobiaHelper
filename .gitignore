@@ -3,4 +3,4 @@
 /__pycache__
 run_streamlit.bat
 alternate_data.json
-key.txt
+config/key.txt
