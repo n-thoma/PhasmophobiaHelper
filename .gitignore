@@ -1,5 +1,6 @@
 /.idea
 /env
 /__pycache__
-config.json
 run_streamlit.bat
+key.txt
+alternate_data.json
