@@ -2,5 +2,4 @@
 /env
 /__pycache__
 run_streamlit.bat
-key.txt
 alternate_data.json

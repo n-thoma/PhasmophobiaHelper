@@ -22,33 +22,33 @@ import streamlit
 # ---------------------------------------------------------------------------------------------------------------------
 
 # Function to extract API key
-def get_api_key(filepath):
+def get_api_key():
     try:
-        with open(filepath, 'r') as file:
+        with open("config/key.txt", 'r') as file:
             for line in file:
                 line = line.strip()
                 if line.startswith("KEY="):
                     return line.split("=", 1)[1].strip()
         raise ValueError("No valid 'KEY=' entry found in the file.")
     except FileNotFoundError:
-        raise FileNotFoundError(f"The file '{filepath}' does not exist.")
+        raise FileNotFoundError(f"The file 'config/key.txt' does not exist.")
 
 
 # Function to extract GPT model to use
 def get_gpt_model():
-    with open("config.json", 'r') as file:
+    with open("config/config.json", 'r') as file:
         data = json.load(file)
     return data.get("GPT_Model")
 
 # Function to extract AI instructions
 def get_instructions():
-    with open("config.json", 'r') as file:
+    with open("config/config.json", 'r') as file:
         data = json.load(file)
     return data.get("Assistant_Instructions")
 
 # Function to extract filepaths for file_search tool
 def get_file_paths():
-    with open("config.json", 'r') as file:
+    with open("config/config.json", 'r') as file:
         data = json.load(file)
 
     filepaths = []
@@ -65,7 +65,7 @@ def get_file_paths():
 
 # Init client with api key
 client = OpenAI(
-    api_key = str(get_api_key("key.txt"))
+    api_key = str(get_api_key())
 )
 
 # Init assistant with instructions, gpt model, and tools (function calls)
