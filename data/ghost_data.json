@@ -1,0 +1,528 @@
+{
+    "ghosts": [
+        {
+            "name": "Spirit",
+            "evidence": [
+                "EMF Level 5",
+                "Spirit Box",
+                "Ghost Writing"
+            ],
+            "strengths": "No strength.",
+            "weaknesses": "Incense is more effective, preventing a hunt for longer.",
+            "game_description": "Spirits are very common ghosts. They are very powerful, but passive, only attacking when they need to. They defend their place of death to the utmost degree, killing anyone that is caught overstaying their welcome.",
+            "notes": [
+                {
+                    "title": "Incense Test",
+                    "description": "When you smudge a Spirit, it will not be able to hunt again for another 180 seconds (3 minutes). If the Spirit hunts before 180 seconds, it is not a Spirit. If it hunts after the 180 seconds, it CAN be a Spirit but it also may not."
+                }
+            ]
+        },
+        {
+            "name": "Wraith",
+            "evidence": [
+                "EMF Level 5",
+                "Spirit Box",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Cannot be tracked by footsteps. Will occasionally teleport to a random player.",
+            "weaknesses": "Will not step in salt.",
+            "game_description": "Wraiths are one of the most dangerous ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
+            "notes": [
+                {
+                    "title": "Salt Test",
+                    "description": "The Wraith will not step in salt, so if you see footprints in salt, it is not a Wraith."
+                },
+                {
+                    "title": "Teleportation",
+                    "description": "The Wraith randomly teleports to a player's location which causes the EMF Reader to randomly spike."
+                }
+            ]
+        },
+        {
+            "name": "Phantom",
+            "evidence": [
+                "Spirit Box",
+                "Ultraviolet",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Looking at a Phantom will lower the player's sanity considerably. Will occasionally walk to a random player.",
+            "weaknesses": "Taking a photo of the Phantom will cause it to briefly disappear. Less visible during hunts.",
+            "game_description": "A Phantom is a ghost that can possess the living, inducing fear into those around it. They are most commonly summoned from Ouija Boards.",
+            "notes": [
+                {
+                    "title": "Sanity",
+                    "description": "Looking at the Phantom will lower the player's sanity more than other ghosts."
+                },
+                {
+                    "title": "Photo Test",
+                    "description": "Taking a photo of the Phantom will cause it to disappear during hunts, ghost events, and a D.O.T.S. photo. Check the photo to see if the ghost is visible or not. If the photo is empty but is a '3 Star' ghost photo, it is a Phantom."
+                },
+                {
+                    "title": "Phantom Hunt",
+                    "description": "During a hunt, the Phantom will be visible for a shorter amount of time than other ghosts."
+                }
+            ]
+        },
+        {
+            "name": "Poltergeist",
+            "evidence": [
+                "Spirit Box",
+                "Ultraviolet",
+                "Ghost Writing"
+            ],
+            "strengths": "Capable of throwing multiple objects at once. Can throw objects at high velocities.",
+            "weaknesses": "Becomes powerless with no throwables nearby.",
+            "game_description": "One of the most famous ghosts, the Poltergeist. Known to manipulate objects around it to spread fear into its victims.",
+            "notes": [
+                {
+                    "title": "Throwing Objects",
+                    "description": "The Poltergeist throws items super far and super fast. It can throw multiple items at once. During hunts, the Poltergeist has a 100% chance of throwing an item every 0.5 seconds."
+                },
+                {
+                    "title": "Poltergeist Test",
+                    "description": "Outside of a hunt, the Poltergeist has the ability to throw multiple objects at once. If you see multiple objects thrown at once, it is a Poltergeist. You can conduct this test by taking multiple objects and placing them into a pile."
+                }
+            ]
+        },
+        {
+            "name": "Banshee",
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Will target only one player at a time Increased chance of performing a singing ghost event.",
+            "weaknesses": "Has a distinctive wail on the Parabolic Microphone.",
+            "game_description": "The singing siren, known for attracting its victims through song. It has been known to single out its prey before making a killing blow.",
+            "notes": [
+                {
+                    "title": "Stalker",
+                    "description": "Banshees are stalkers, meaning they love walking towards and generally staying close to their target even outside of the ghost room. You can use motions sensors to show this behavior. Banshees are more likely to start the hunt right on the player they are stalking."
+                },
+                {
+                    "title": "D.O.T.S. State",
+                    "description": "When the Banshee is in D.O.T.S. state, it will walk towards the targeted player."
+                },
+                {
+                    "title": "Banshee Parabolic Microphone Test",
+                    "description": "A Banshee has a distinctive wail on the Parabolic Microphone. If you hear a Banshee wail, it is a Banshee."
+                },
+                {
+                    "title": "Banshee Hunt",
+                    "description": "The Banshee begins it's hunt when its target is at 50% sanity or lower. During the hunt, it will ignore all other players and focus on its target (unless the target is outside of the building. In which case it will hunt like any other ghost)."
+                }
+            ]
+        },
+        {
+            "name": "Jinn",
+            "evidence": [
+                "EMF Level 5",
+                "Freezing Temperatures",
+                "Ultraviolet"
+            ],
+            "strengths": "Travels at a faster speed if a distant player is in line of sight while the fuse box is on.",
+            "weaknesses": "Cannot use its ability if the fuse box is off. Will never turn the fuse box off directly.",
+            "game_description": "A Jinn is a territorial ghost that will attack when threatened. It has also been known to be able to travel at significant speed.",
+            "notes": [
+                {
+                    "title": "Breaker",
+                    "description": "The Jinn will NEVER turn off the breaker. If the breaker is turned off by a ghost, it is not a Jinn."
+                },
+                {
+                    "title": "Jinn Ability Test",
+                    "description": "Every so often, the Jinn does its ability at the power breaker. You can test this by putting an EMF Reader at the power breaker. If it picks off a reading but never turns off the power, it is a very likely Jinn."
+                },
+                {
+                    "title": "Jinn Hunt",
+                    "description": "When the Jinn has line of sight on a player, it will try to close the gap between them. If the player is far away, the Jinn will move faster to close the gap, but only if the power breaker is on."
+                }
+            ]
+        },
+        {
+            "name": "Mare",
+            "evidence": [
+                "Ghost Orbs",
+                "Spirit Box",
+                "Ghost Writing"
+            ],
+            "strengths": "Has an increased chance to attack in the dark.",
+            "weaknesses": "Turning the lights on will reduce the chance of an attack. Will occasionally turn lights off right away. Will never turn a light on.",
+            "game_description": "A Mare is the source of all nightmares, making it most powerful in the dark.",
+            "notes": [
+                {
+                    "title": "Darkness",
+                    "description": "Mares likes the dark. The more lights that are off, the more likely it is to attack. It will actively try to avoid lit rooms and will always start hunts in the dark. One tell is that the Mare constantly hunts from different rooms. Mares cannot turn on lights. The Mare has a higher chance to peform the light-shattering ghost event over other ghost events."
+                },
+                {
+                    "title": "Mare Ability Test",
+                    "description": "The Mare has the ability to immediately turn off the light as soon as the player turns on the light. If the light is turned off immediately after being turned on, it is a very likely Mare."
+                },
+                {
+                    "title": "Mare Hunt",
+                    "description": "If the lights of the room that the Mare is in are turned on, it will hunt when the average sanity is 40%. However, if the lights are turned off, it will hunt at 60%. Only applies to the room lights and not light from equipment."
+                }
+            ]
+        },
+        {
+            "name": "Revenant",
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "Ghost Writing"
+            ],
+            "strengths": "Moves significantly faster if the player location is known during a hunt.",
+            "weaknesses": "Moves very slowly when not chasing a player.",
+            "game_description": "A Revenant is a violent ghost that will attack indiscriminately. Their speed can be deceiving, as they are slow while dormant; however, as soon as they hunt they can move incredibly fast.",
+            "notes": [
+                {
+                    "title": "Revenant Hunt Speeds",
+                    "description": "The Revenant is either really slow, or really fast. When the Revenant sees you, hears you, or detects your electronic equipment during a hunt, it will move at a speed of 3 m/s. When it doesn't see you, it will move at a speed of 1 m/s."
+                }
+            ]
+        },
+        {
+            "name": "Shade",
+            "evidence": [
+                "EMF Level 5",
+                "Freezing Temperatures",
+                "Ghost Writing"
+            ],
+            "strengths": "Less likely to perform interactions.",
+            "weaknesses": "Cannot hunt if people are nearby.",
+            "game_description": "A Shade is known to be very shy. There is evidence to suggest that a Shade will stop all paranormal activity if there are people nearby.",
+            "notes": [
+                {
+                    "title": "Shy",
+                    "description": "Shade will not do anything if you are in the same room as it. They will not hunt if you are in the same room as it. They however can touch doors and can write in the Ghost Writing Book when you are in the same room as it."
+                },
+                {
+                    "title": "Shade Test",
+                    "description": "One of the tells that it is a Shade is if you have a motion sensor in the room to verify the ghost is in the room with you but it does not interact with anything."
+                },
+                {
+                    "title": "Shadow Form",
+                    "description": "When a Shade performs a ghost event, it has a higher chance of appearing as a shadow. If the ghost is made to appear using the Summoning Circle, Music Box, or Monkey Paw, it has a chance of appearing as a shadow rather than its full physical form."
+                }
+            ]
+        },
+        {
+            "name": "Demon",
+            "evidence": [
+                "Freezing Temperatures",
+                "Ultraviolet",
+                "Ghost Writing"
+            ],
+            "strengths": "Can initiate hunts more often. Can hunt at max sanity.",
+            "weaknesses": "Crucifix range is 50% larger than placement range indicator.",
+            "game_description": "A Demon is one of the worst ghosts you can encounter. It has been known to attack without reason.",
+            "notes": [
+                {
+                    "title": "Demon Hunt",
+                    "description": "The Demon has the ability to hunt at ANY sanity threashold. Outside of the ability, Demons will normally hunt at a sanity threshold of 70% instead of the standard 50%. Demons have a minimum grace period of 20 seconds before they can hunt again instead of the standard 25 seconds. Using Incense on a Demon will prevent hunts for only 60 seconds instead of the standard 90 seconds."
+                }
+            ]
+        },
+        {
+            "name": "Yurei",
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Has a stronger effect on sanity.",
+            "weaknesses": "Smudging the Yurei will temporarily trap it and reduce how often it wanders. Using its ability causes it to shut doors.",
+            "game_description": "A Yurei is a ghost that has returned to the physical world, usually for the purpose of revenge or hatred.",
+            "notes": [
+                {
+                    "title": "Yurei Door Ability",
+                    "description": "The Yurei will close a door completely, causing a creaking sounds. After 2 seconds of the door being close all the way, it will cause a door shut sound effect. You will know it's a Yurei from this ability. Yurie's are also the only ghost that can interact with the front door outside of a ghost event."
+                },
+                {
+                    "title": "Yurei Sanity Ability",
+                    "description": "When the Yurei uses this ability, all players with a 7.5 meter radius will have their sanity drop by 15% of the current value. The Yurei cannot use this ability if the room it is in has no opened door."
+                }
+            ]
+        },
+        {
+            "name": "Oni",
+            "evidence": [
+                "EMF Level 5",
+                "Freezing Temperatures",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Increased activity when players are nearby.",
+            "weaknesses": "More visible during hunts. Cannot perform the airball ghost event.",
+            "game_description": "Onis love to scare their victims as much as possible before attacking. They are often seen in their physical form, guarding their place of death.",
+            "notes": [
+                {
+                    "title": "Oni Hunt",
+                    "description": "Oni's are much more visible during hunts. Quite the opposite of a Phantom which are less visible during hunts. Oni's are also regular speed during hunts."
+                },
+                {
+                    "title": "Oni Ghost Event Notes",
+                    "description": "The Oni will never EVER do the airball ghost event. Oni's will prefer showing in its full form during a manifestation event as opposed to a shadowy form. Oni's have double the sanity drain when colliding with the target player in a ghost event."
+                }
+            ]
+        },
+        {
+            "name": "Hantu",
+            "evidence": [
+                "Ghost Orbs",
+                "Freezing Temperatures",
+                "Ultraviolet"
+            ],
+            "strengths": "Lower temperatures allow the Hantu to move faster.",
+            "weaknesses": "Warmer areas slow the Hantu's movement. Will produce freezing breath during a hunt if the fuse box is off. Will never turn the fuse box on.",
+            "game_description": "A Hantu is a rare ghost that thrives in the coldest climates. The cold seems to make them more aggressive and empowered.",
+            "notes": [
+                {
+                    "title": "Hantu Speed",
+                    "description": "The Hantu's speed during hunts is directly based on the temperature of the room that the Hantu is currently in. This means that the Hantu will be really fast in the ghost room and slower in most other rooms that are warmer. The Hantu does not speed up when it has line of sight on you, nor does it accelerate as the hunt goes on."
+                },
+                {
+                    "title": "Hantu Breath",
+                    "description": "The Hantu is the only ghost in the game that will produce freezing breath during a hunt as long as the breaker is off. This is a tell that it is a Hantu. Note: Dead players cannot see the freezing breath."
+                }
+            ]
+        },
+        {
+            "name": "Yokai",
+            "evidence": [
+                "Ghost Orbs",
+                "Spirit Box",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Talking near the Yokai will anger it, increasing the chance to attack.",
+            "weaknesses": "Can only hear voices close to it during a hunt.",
+            "game_description": "Yokai are common ghosts that are attracted to human voices. They can usually be found haunting family homes.",
+            "notes": [
+                {
+                    "title": "Yokai Hunts",
+                    "description": "Yokai is a dumb ghost that does not detect electronics during a hunt unless it is in a 2.5 meter radius of it. The Yokai is also normal speed. Normally, if you have your flashlight turn on during a hunt, and it is flickering, the ghost is close enough to find out where you are. The Yokai however, will not be able to detect you even when your flashlight is flickering."
+                },
+                {
+                    "title": "Voice Detection",
+                    "description": "When at least 1 player uses voice chat in the same room as the Yokai, its hunt sanity threshold is temporarily increased to 80%. Otherwise, it has the standard threshhold of 50%."
+                }
+            ]
+        },
+        {
+            "name": "Goryo",
+            "evidence": [
+                "EMF Level 5",
+                "Ultraviolet",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Can only enter a D.O.T.S. state when nobody is nearby. Its D.O.T.S. silhouette can only be seen through a Video Camera.",
+            "weaknesses": "Cannot wander far from its room, or change favorite rooms.",
+            "game_description": "When a Goryo passes through a DOTS projector, using a video camera is the only way to see it.",
+            "notes": [
+                {
+                    "title": "D.O.T.S. State",
+                    "description": "Goryo is the only ghost that requires a camera to see its D.O.T.S. state. If you see the Goryo in the D.O.T.S. state through the camera and not with your eyes, it is a Goryo."
+                },
+                {
+                    "title": "Goryo Room Change",
+                    "description": "The Goryo will never change the ghost room / favorite room as they can only perform short roams rather than full room changes."
+                }
+            ]
+        },
+        {
+            "name": "Myling",
+            "evidence": [
+                "EMF Level 5",
+                "Ultraviolet",
+                "Ghost Writing"
+            ],
+            "strengths": "Produces quieter sounds during a hunt.",
+            "weaknesses": "Produces paranormal sounds more frequently on the Parabolic Microphone.",
+            "game_description": "A Myling is a very vocal and active ghost. They are rumoured to be quiet when hunting their prey.",
+            "notes": [
+                {
+                    "title": "Myling Hunt",
+                    "description": "You will not hear the Myling footsteps during a hunt if you are far away from it until it gets closer to you. It is not related to volume, but rather range."
+                },
+                {
+                    "title": "Myling Test",
+                    "description": "During a hunt pull out your flashlight. If it flickers but you do not hear any footsteps yet, it is most likely a Myling."
+                },
+                {
+                    "title": "Myling Parabolic Microphone Test",
+                    "description": "The Myling produces paranormal sounds through the Parabolic Microphone more often than other ghosts."
+                }
+            ]
+        },
+        {
+            "name": "Onryo",
+            "evidence": [
+                "Ghost Orbs",
+                "Spirit Box",
+                "Freezing Temperatures"
+            ],
+            "strengths": "A flame extinguishing can cause an Onryo to attack.",
+            "weaknesses": "The presence of flames reduces the Onryo's ability to attack.",
+            "game_description": "The Onryo is often referred to as The Wrathful Spirit. It steals souls from dying victims' bodies to seek revenge. This ghost has been known to fear any form of fire, and will do anything to be far from it.",
+            "notes": [
+                {
+                    "title": "Onryo Fire",
+                    "description": "The Onryo treats fire as a crucifix. If the Onryo attempts a hunt within 4 meters of any type of flame (firelight, igner, candle, etc.), it will blow out the flame instead and the hunt will fail."
+                },
+                {
+                    "title": "Onryo Test",
+                    "description": "The Onryo has the ability where it will start a hunt after it extinguishes 3 flames. If you have 3 flames extinguished and the ghost starts a hunt, it is a very likely Onryo. Note: The Onryo has to extinguish the flame, not the player. To test this, light 3 firelights around a Crucifix and see if the ghost extinguishes them. If it does, and the Crucifix is used, it is a very likely Onryo."
+                }
+            ]
+        },
+        {
+            "name": "Twins",
+            "evidence": [
+                "EMF Level 5",
+                "Spirit Box",
+                "Freezing Temperatures"
+            ],
+            "strengths": "Either twin may start a hunt, though not at the same time. One twin is slow, the other is fast.",
+            "weaknesses": "Will often interact with the environment at the same time but usually in different places.",
+            "game_description": "These ghosts have been reported to mimic each other's actions. They alternate their attacks to confuse their prey.",
+            "notes": [
+                {
+                    "title": "The Slow Twin",
+                    "description": "The Slow Twin is the real ghost that is in the ghost room that gives you the freezing temperatures and other evidence. The Slow Twin is 10% slower than a normal ghost during a hunt."
+                },
+                {
+                    "title": "The Fast Twin",
+                    "description": "The Fast Twin is the fake ghost that is not in the ghost room. The Fast Twin likes to roam around and touch things. The Fast Twin is 10% faster than a normal ghost during a hunt."
+                },
+                {
+                    "title": "Twins Hunt",
+                    "description": "When The Twins initiate a hunt, there is a 50-50 chance of it beginning in the current location or beginning in a close by location. If the ghost begins from the current location, it will be the slower Twin. If it begins from a close-by location, it is the faster Twin. Note: In the game mechanics, the Twins are considered one ghost."
+                }
+            ]
+        },
+        {
+            "name": "Raiju",
+            "evidence": [
+                "EMF Level 5",
+                "Ghost Orbs",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Moves faster near active electronic equipment.",
+            "weaknesses": "Disrupts electronic equipment from further away when it hunts.",
+            "game_description": "A Raiju is a demon that thrives on electrical current. While generally calm, they can become agitated when overwhelmed with power.",
+            "notes": [
+                {
+                    "title": "Raiju Hunt",
+                    "description": "The Raiju is regular speed during hunts when there are no electronic devices nearby. When there are electronic devices nearby, the Raiju will move at a speed of 2.5 m/s. Also, in the presence of electronic devices, the Raiju will hunt with a sanity threshold of 65% rather than the normal 50%."
+                }
+            ]
+        },
+        {
+            "name": "Obake",
+            "evidence": [
+                "EMF Level 5",
+                "Ghost Orbs",
+                "Ultraviolet"
+            ],
+            "strengths": "Has a chance to not leave fingerprints when interacting with something. May leave fingerprints that disappear quicker.",
+            "weaknesses": "Has a small chance of leaving special fingerprints. Can quickly shapeshift into another model during a hunt.",
+            "game_description": "Obake are terrifying shape-shifters, capable of taking on many forms. They have been seen taking on humanoid shapes to attract their prey.",
+            "notes": [
+                {
+                    "title": "Fingerprints",
+                    "description": "The Obake as a 75% chance of leaving figerprints instead of the usual 100%. The Obake as a 1/6 chance of doing the following: Leaving a 6-finger handprint, leaving 2 fingerprints instead of 1 on the light switches, 5-finger handprint instead of 4 on the keyboards and Prison cell doors."
+                },
+                {
+                    "title": "Obake Hunt",
+                    "description": "During a hunt, the Obake will shapeshift into a different ghost model of the same gender during a flicker. Dead players cannot see this. The first shapeshift will happen approximately 7-9 seconds during the hunt."
+                }
+            ]
+        },
+        {
+            "name": "The Mimic",
+            "evidence": [
+                "Spirit Box",
+                "Freezing Temperatures",
+                "Ultraviolet"
+            ],
+            "strengths": "Can mimic the abilities and traits of other ghosts.",
+            "weaknesses": "Will present fake Ghost Orbs as secondary evidence.",
+            "game_description": "The Mimic is an elusive, mysterious, copycat ghost that mirrors traits and behaviours from others, including other ghost types.",
+            "notes": [
+                {
+                    "title": "Mimicry",
+                    "description": "The Mimic changes which ghost it mimics around every 30 seconds to 2 minutes but does not change during hunts. The Mimic can mimic ALL behaviors of any ghost including things like Banshee screams and hunt speeds."
+                },
+                {
+                    "title": "The Mimic's Fake Ghost Orbs",
+                    "description": "The Mimic will always show fake Ghost Orbs as secondary evidence, even if the ghost it is mimicking does not have Ghost Orbs as evidence. It's important to note that Ghost Orb is NOT part of The Mimic's main evidence. During 0-evidence games, if you see Ghost Orbs, it is a giveaway that it is The Mimic."
+                }
+            ]
+        },
+        {
+            "name": "Moroi",
+            "evidence": [
+                "Spirit Box",
+                "Freezing Temperatures",
+                "Ghost Writing"
+            ],
+            "strengths": "Moves noticeably faster at low player sanity. Can curse players, making them lose sanity quicker than usual while in the investigation zone.",
+            "weaknesses": "Incense blinds the ghost for 50% longer during hunts.",
+            "game_description": "Moroi have risen from the grave to drain energy from the living. They have been known to place curses on their victims, curable only by antidotes or moving very far away.",
+            "notes": [
+                {
+                    "title": "Moroi Hunt",
+                    "description": "The Moroi's speed is dependent on the average sanity of the players. The Moroi also accelerates with continuous line-of-sight of a player. With below 5% average sanity, and its acceleration, the Moroi can reach a maximum speed of 3.71 m/s. When using an incense again the Moroi during a hunt, it will blind the ghost for 7.5 seconds instead of the standard 5 seconds."
+                },
+                {
+                    "title": "Moroi Curse",
+                    "description": "The Moroi can curse you in 2 ways: By successfully obtaining a response from the Spirit Box, and by hearing whispers through the parabolic microphone. When a player is cursed, their passive sanity drain is doubled. Being in lit rooms and firelights do not help. Consuming Sanity Medication removes the curse for that player."
+                },
+                {
+                    "title": "Moroi Test",
+                    "description": "One of the ways to test for a Moroi is by starting a hunt with low sanity. Start circling the ghost around furniture and take some Sanity Medication. If the Moroi starts getting slower and slower as the hunt goes on, it is most likely a Moroi."
+                }
+            ]
+        },
+        {
+            "name": "Deogen",
+            "evidence": [
+                "Spirit Box",
+                "Ghost Writing",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Always knows where the player is during a hunt and moves very fast when going to their location.",
+            "weaknesses": "Moves very slowly when near its victim.",
+            "game_description": "Sometimes surrounded by an endless fog, Deogen have been eluding ghost hunters for years. These ghosts have been reported to find even the most hidden prey, before stalking them into exhaustion.",
+            "notes": [
+                {
+                    "title": "Deogen Hunt",
+                    "description": "You cannot hide from the Deogen. The Deogen will immediately know where you are and go towards you at a fast 3 m/s. However, when the ghost is within 2.5 meters of the player, it will slow down to 0.4 m/s."
+                },
+                {
+                    "title": "Deogen Ability",
+                    "description": "If the player asks questions through the Spirit box within 1 meter of the Deogen, it has a 33% chance to respond with a bull-like breathing."
+                }
+            ]
+        },
+        {
+            "name": "Thaye",
+            "evidence": [
+                "Ghost Orbs",
+                "Ghost Writing",
+                "D.O.T.S. Projector"
+            ],
+            "strengths": "Much more active, aggressive and faster during hunts as soon as a player enters the location.",
+            "weaknesses": "Becomes slower and less active over time.",
+            "game_description": "Thaye have been known to rapidly age over time, even in the afterlife. From what we've learned, they seem to deteriorate faster while within the presence of the living.",
+            "notes": [
+                {
+                    "title": "Thaye Hunt",
+                    "description": "The Thaye does not speed up with a line-of-sight on the player."
+                },
+                {
+                    "title": "Thaye Ability/Age",
+                    "description": "The Thaye will attempt to age every 1-2 minutes; if at least one player is in the same room as the ghost, the Thaye will add 1 to its age, else it will wait another 30 seconds before attempting to age again. The older the Thaye gets, the slower it is during hunts, the less ghost interactions/events there will be, lower the sanity threshold will be."
+                }
+            ]
+        }
+    ]
+}

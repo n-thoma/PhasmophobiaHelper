@@ -22,10 +22,17 @@ import streamlit
 # ---------------------------------------------------------------------------------------------------------------------
 
 # Function to extract API key
-def get_api_key():
-    with open("config.json", 'r') as file:
-        data = json.load(file)
-    return data.get("API_Key")
+def get_api_key(filepath):
+    try:
+        with open(filepath, 'r') as file:
+            for line in file:
+                line = line.strip()
+                if line.startswith("KEY="):
+                    return line.split("=", 1)[1].strip()
+        raise ValueError("No valid 'KEY=' entry found in the file.")
+    except FileNotFoundError:
+        raise FileNotFoundError(f"The file '{filepath}' does not exist.")
+
 
 # Function to extract GPT model to use
 def get_gpt_model():
@@ -39,6 +46,18 @@ def get_instructions():
         data = json.load(file)
     return data.get("Assistant_Instructions")
 
+# Function to extract filepaths for file_search tool
+def get_file_paths():
+    with open("config.json", 'r') as file:
+        data = json.load(file)
+
+    filepaths = []
+
+    for path in data.get("File_Paths"):
+        filepaths.append("data/" + path)
+
+    return filepaths
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   Assistant Setup
@@ -46,7 +65,7 @@ def get_instructions():
 
 # Init client with api key
 client = OpenAI(
-    api_key = str(get_api_key())
+    api_key = str(get_api_key("key.txt"))
 )
 
 # Init assistant with instructions, gpt model, and tools (function calls)
@@ -56,297 +75,28 @@ phasmophobia_assistant = client.beta.assistants.create(
     model=get_gpt_model(),
     tools=[
         {
-            "type": "function",
-            "function": {
-                "name": "get_ghost_data",
-                "description": "Outputs data about a specific ghost of a given name. Data includes: evidence needed, strengths, weaknesses, description, and notes about the ghost.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "enum": ["Spirit", "Poltergeist", "Mare", "Demon", "Yokai", "Myling", "Raiju", "Moroi", "Wraith", "Banshee", "Revenant", "Yurei", "Hantu", "Onryo", "Obake", "Deogen", "Phantom", "Jinn", "Shade", "Oni", "Goryo", "The Twins", "The Mimic", "Thaye"],
-                            "description": "The name of the ghost you want to learn about."
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "get_evidence_data",
-                "description": "Outputs data about a specific evidence type of a given name. Data includes: Ghost Proven With, descriptions, mechanics, and notes about the evidence type. Does NOT talk about the equipment! Only talks about the evidence itself.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
-                            "description": "The name of the evidence you want to learn about."
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "get_ghosts_from_evidence",
-                "description": "Outputs a list of possible ghosts from the given evidence name. Use this if user asks something like: What ghosts can be proven with EMF Level 5?",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "enum": ["D.O.T.S. Projector", "Ghost Writing", "EMF Level 5", "Ghost Orbs", "Ultraviolet", "Freezing Temperatures", "Spirit Box"],
-                            "description": "The name of the evidence."
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "search_ghosts_from_keyword",
-                "description": "Outputs every ghost and its data that contains the given keyword in its data. Only searches for results in ghosts; not evidence, not equipment, not cursed items.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word, but short phrases allowed too. Examples: 'fast', 'slow', 'hunt', 'breath'"
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "get_equipment_data",
-                "description": "Outputs data about a equipment of a given name. Data includes: description, mechanics, data on the different tiers, and other notes about the equipment",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "enum": ["D.O.T.S. Projector", "EMF Reader", "Ghost Writing Book", "Spirit Box", "Thermometer", "UV Light", "Video Camera", "Flashlight", "Crucifix", "Firelight", "Head Gear", "Igniter", "Incense", "Motion Sensor", "Parabolic Microphone", "Photo Camera", "Salt", "Sanity Medication", "Sound Sensor", "Tripod"],
-                            "description": "The name of the equipment you want to learn about."
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "get_cursed_item_data",
-                "description": "Outputs data about a cursed item of a given name. Data includes: description, mechanics, and other notes about the cursed item",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "enum": ["Haunted Mirror", "Monkey Paw", "Music Box", "Ouija Board", "Summoning Circle", "Tarot Cards", "Voodoo Doll"],
-                            "description": "The name of the cursed item you want to learn about."
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "search_equipment_from_keyword",
-                "description": "Outputs every equipment and its data that contains the given keyword in its data. Only searches for results in equipment; not evidence, not ghost, not cursed items.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word, but short phrases allowed too. Examples: 'freezing', 'glitch', 'head', 'blind'"
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "search_cursed_item_from_keyword",
-                "description": "Outputs every cursed item and its data that contains the given keyword in its data. Only searches for results in cursed items; not evidence, not equipment, not ghosts.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "description": "The keyword or phrase you want to search for. Highly recommended to keep this 1 word, but short phrases allowed too. Examples: 'sanity', 'ghost', 'hunt', 'ghost room'"
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
-        },
-        {
-            "type": "function",
-            "function": {
-                "name": "get_ghost_evidence",
-                "description": "Outputs the evidence needed to prove a ghost of a given name. Data includes: evidence needed to prove the ghost.",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "arg": {
-                            "type": "string",
-                            "enum": ["Spirit", "Poltergeist", "Mare", "Demon", "Yokai", "Myling", "Raiju", "Moroi", "Wraith", "Banshee", "Revenant", "Yurei", "Hantu", "Onryo", "Obake", "Deogen", "Phantom", "Jinn", "Shade", "Oni", "Goryo", "The Twins", "The Mimic", "Thaye"],
-                            "description": "The name of the ghost you want to learn about."
-                        }
-                    },
-                    "required": ["arg"]
-                }
-            }
+            "type": "file_search"
         }
-    ] 
+    ], 
 )
+
+vector_store = client.beta.vector_stores.create(name="Phasmophobia Data Vector Store")
+
+file_paths = get_file_paths()
+file_streams = [open(path, "rb") for path in file_paths]
+
+file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+    vector_store_id=vector_store.id,
+    files=file_streams
+)
+
+phasmophobia_assistant = client.beta.assistants.update(
+    assistant_id=phasmophobia_assistant.id,
+    tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
+)    
 
 # Init thread
 thread = client.beta.threads.create()
-
-
-# ---------------------------------------------------------------------------------------------------------------------
-#   Ghost Data Helper Functions
-# ---------------------------------------------------------------------------------------------------------------------
-
-# Open ghost_data.json for read
-with open("ghost_data.json", "r") as file:
-    data = json.load(file)
-
-
-# Gets ghost json data from given name
-def get_ghost_data(ghost_name):
-    for ghost in data["ghosts"]:
-        if ghost["name"].lower() == ghost_name.lower():
-            return ghost
-
-
-# Gets ghost evidence from given name
-def  get_ghost_evidence(ghost_name):
-    for ghost in data["ghosts"]:
-        if ghost["name"].lower() == ghost_name.lower():
-            return ghost["evidence"]
-
-
-# Gets evidence json data from the given name
-def get_evidence_data(evidence_name):
-    for evidence in data["evidences"]:
-        if evidence["name"].lower() == evidence_name.lower():
-            return evidence
-        
-
-# Gets list of ghosts from given evidence name
-def get_ghosts_from_evidence(evidence_name):
-    for evidence in data["evidences"]:
-        if evidence["name"].lower() == evidence_name.lower():
-            return evidence["ghosts_proven_with"]
-
-
-# Gets information on ghosts given a key word
-def search_ghosts_from_keyword(keyword):
-    results = []
-
-    # Iterates through ghosts and all its elements, searching for keyword
-    for ghost in data["ghosts"]:
-
-        for evidence in ghost["evidence"]:
-            if keyword in evidence.lower():
-                results.append(f"Found {keyword} in {ghost["name"]} in Evidence: {ghost["evidence"]}")
-
-        if keyword.lower() in ghost["strengths"].lower():
-            results.append(f"Found {keyword} in {ghost["name"]} in Strengths: {ghost["strengths"]}")
-        if keyword.lower() in ghost["weaknesses"].lower():
-            results.append(f"Found {keyword} in {ghost["name"]} in Weaknesses: {ghost["weaknesses"]}")
-        if keyword.lower() in ghost["game_description"].lower():
-            results.append(f"Found {keyword} in {ghost["name"]} in Game Description: {ghost["game_description"]}")
-
-        for note in ghost["notes"]:
-            if keyword.lower() in note["title"].lower():
-                results.append(f"Found {keyword} in {ghost["name"]} in a Note titled {note["title"]}: {note["description"]}")
-            if keyword.lower() in note["description"].lower():
-                results.append(f"Found {keyword} in {ghost["name"]} in a Note titled {note["title"]}: {note["description"]}")
-
-    return results
-
-
-# Gets information on equipment given a key word
-def search_cursed_item_from_keyword(keyword):
-    results = []
-
-    # Iterates through cursed items and all its elements, searching for keyword
-    for cursed_item in data["cursed_items"]:
-
-        if keyword in cursed_item["description"]:
-            results.append(f"Found {keyword} in {cursed_item["name"]} in Description: {cursed_item["description"]}")
-        if keyword in cursed_item["mechanics"]:
-            results.append(f"Found {keyword} in {cursed_item["name"]} in Mechanics: {cursed_item["mechanics"]}")
-
-        for note in cursed_item["notes"]:
-            if keyword.lower() in note["title"].lower():
-                results.append(f"Found {keyword} in {cursed_item["name"]} in a Note titled {note["title"]}: {note["description"]}")
-            if keyword.lower() in note["description"].lower():
-                results.append(f"Found {keyword} in {cursed_item["name"]} in a Note titled {note["title"]}: {note["description"]}")
-
-    return results
-
-
-# Gets information on cursed item given a key word
-def search_equipment_from_keyword(keyword):
-    results = []
-
-    # Iterates through evidences and all its elements, searching for keyword
-    for evidence in data["evidences"]:
-
-        for ghost in evidence["ghosts_proven_with"]:
-            if keyword in ghost.lower():
-                results.append(f"Found {keyword} in {evidence["name"]} in Ghosts Proven With: {evidence["ghosts_proven_with"]}")
-
-        if keyword in evidence["game_description"]:
-            results.append(f"Found {keyword} in {evidence["name"]} in Game Description: {evidence["game_description"]}")
-        if keyword in evidence["wiki_description"]:
-            results.append(f"Found {keyword} in {evidence["name"]} in Wiki Description: {evidence["wiki_description"]}")
-        if keyword in evidence["mechanics"]:
-            results.append(f"Found {keyword} in {evidence["name"]} in Mechanics: {evidence["mechanics"]}")
-
-        for note in evidence["notes"]:
-            if keyword.lower() in note["title"].lower():
-                results.append(f"Found {keyword} in {evidence["name"]} in a Note titled {note["title"]}: {note["description"]}")
-            if keyword.lower() in note["description"].lower():
-                results.append(f"Found {keyword} in {evidence["name"]} in a Note titled {note["title"]}: {note["description"]}")
-
-    return results
-
-
-# Gets equipment json data from the given name
-def get_equipment_data(equipment_name):
-    for equipment in data["equipment"]:
-        if equipment["name"].lower() == equipment_name.lower():
-            return equipment
-        
-
-# Gets cursed item json data from the given name
-def get_cursed_item_data(item_name):
-    for item in data["cursed_items"]:
-        if item["name"].lower() == item_name.lower():
-            return item
-    #return f"MESSAGE TO THE AI: '{item_name} is not a cursed item. Try using a different function!."
-        
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   EventHandler class to define how to handle the events in the response stream.
@@ -361,6 +111,30 @@ class EventHandler(AssistantEventHandler):
             self.handle_requires_action(event.data, run_id)
 
 
+    @override
+    def on_tool_call_created(self, tool_call):
+        print(f"\nassistant > {tool_call.type}\n", flush=True)
+
+
+    @override
+    def on_message_done(self, message) -> None:
+        # print a citation to the file searched
+        message_content = message.content[0].text
+        annotations = message_content.annotations
+        citations = []
+        for index, annotation in enumerate(annotations):
+            message_content.value = message_content.value.replace(
+                annotation.text, f"[{index}]"
+            )
+            if file_citation := getattr(annotation, "file_citation", None):
+                cited_file = client.files.retrieve(file_citation.file_id)
+                citations.append(f"[{index}] {cited_file.filename}")
+
+        print(message_content.value)
+        print("\n".join(citations))
+
+
+    # Handles function calls that require action
     def handle_requires_action(self, data, run_id):
         tool_outputs = []
 
@@ -378,10 +152,9 @@ class EventHandler(AssistantEventHandler):
             except AttributeError:
                 print(f"{tool.function.name} is not callable.")
 
-            print(tool)
-            print(output_str)
-            print()
-            print()
+            # DEBUG :)
+            # print(tool)
+            # print(output_str)
 
             # Append output to tool_outputs arr
             tool_outputs.append({"tool_call_id": tool.id, "output": str(output_str)})
@@ -389,6 +162,7 @@ class EventHandler(AssistantEventHandler):
         self.submit_tool_outputs(tool_outputs, run_id)
 
 
+    # Submits output from function calls to the assistant
     def submit_tool_outputs(self, tool_outputs, run_id):
         # Use the submit_tool_outputs_stream helper
         with client.beta.threads.runs.submit_tool_outputs_stream(
