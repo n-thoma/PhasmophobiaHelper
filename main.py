@@ -11,11 +11,13 @@
 #
 # ---------------------------------------------------------------------------------------------------------------------
 
+import streamlit.delta_generator
 from typing_extensions import override
 from openai import OpenAI, AssistantEventHandler
 from langchain_core.messages import HumanMessage, AIMessage
 import json
 import streamlit
+import re
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   config.json Extract Functions
@@ -33,6 +35,12 @@ def get_api_key():
     except FileNotFoundError:
         raise FileNotFoundError(f"The file 'config/key.txt' does not exist.")
 
+
+# Function to extract AI name
+def get_name():
+    with open("config/config.json", 'r') as file:
+        data = json.load(file)
+    return data.get("Assistant_Name")
 
 # Function to extract GPT model to use
 def get_gpt_model():
@@ -109,6 +117,11 @@ class EventHandler(AssistantEventHandler):
         if event.event == 'thread.run.requires_action':
             run_id = event.data.id
             self.handle_requires_action(event.data, run_id)
+
+
+    #@override
+    #def on_message_delta(self, delta, message):
+        #streamlit.write(message.content[0].text.value)
 
 
     @override
@@ -204,8 +217,30 @@ if 'chat_history' not in streamlit.session_state:
 if 'thread_id' not in streamlit.session_state:
     streamlit.session_state.thread_id = None
 
-streamlit.set_page_config(page_title="G.H.O.S.T.", page_icon="👻")
-streamlit.title("Ghost Hunting Operations and Survival Tool")
+
+# Set page title and icon
+streamlit.set_page_config(page_title="PolterText", page_icon="https://i.imgur.com/LLSQfET.png")
+
+# Centering image
+streamlit.markdown("<div style='text-align: center;'><img src='https://i.imgur.com/y1gj32C.png' width='150'/></div>", unsafe_allow_html=True)
+# Centering title
+streamlit.markdown("<h1 style='text-align: center;'>{} The Ghost Expert</h1>".format(get_name()), unsafe_allow_html=True)
+
+streamlit.write("")
+streamlit.write("")
+streamlit.write("")
+
+
+#with streamlit.sidebar:
+#    streamlit.logo("https://i.imgur.com/DZBjDji.png", size="large", icon_image="https://i.imgur.com/LLSQfET.png")
+#    streamlit.title("Contact List 📞")
+
+#    # Button that starts a new game
+#    contact1Button = streamlit.button(f"{get_name()} The Ghost Expert", icon="👻")
+#    if (contact1Button):
+#        streamlit.session_state.chat_history = []
+#        streamlit.session_state.thread_id = None
+
 
 # Display the conversation history
 for message in streamlit.session_state.chat_history:
@@ -213,11 +248,11 @@ for message in streamlit.session_state.chat_history:
         with streamlit.chat_message("Human"):
             streamlit.markdown(message.content)
     else:
-        with streamlit.chat_message("AI"):
+        with streamlit.chat_message("AI", avatar="https://i.imgur.com/y1gj32C.png"):
             streamlit.markdown(message.content)
 
 # Input prompt from the user
-user_prompt = streamlit.chat_input("Enter your prompt:")
+user_prompt = streamlit.chat_input(f"Ask {get_name()} your Phasmophobia question:")
 
 if user_prompt is not None and user_prompt != "":
 
@@ -227,7 +262,11 @@ if user_prompt is not None and user_prompt != "":
     with streamlit.chat_message("Human"):
         streamlit.markdown(user_prompt)
 
-    with streamlit.chat_message("AI"):
+    with streamlit.chat_message("AI", avatar="https://i.imgur.com/y1gj32C.png"):
+
+        thinking_placeholder = streamlit.empty()
+        thinking_placeholder.markdown("***Typing...***")
+
         # Check if thread_id is None, if so create a new thread, else retrieve the thread
         if streamlit.session_state.thread_id is None:
             thread = client.beta.threads.create()
@@ -235,7 +274,12 @@ if user_prompt is not None and user_prompt != "":
         else:
             thread = client.beta.threads.retrieve(streamlit.session_state.thread_id)
 
+        # Gets assistant response and removes any annotations
         assistant_response = get_assistant_response(user_prompt)
+        assistant_response = re.sub(r"【.*?】", "", assistant_response)
+
         streamlit.markdown(assistant_response)
+
+        thinking_placeholder.empty()
 
     streamlit.session_state.chat_history.append(AIMessage(assistant_response))
