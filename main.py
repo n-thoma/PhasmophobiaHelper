@@ -23,19 +23,6 @@ import re
 #   config.json Extract Functions
 # ---------------------------------------------------------------------------------------------------------------------
 
-# Function to extract API key
-def get_api_key():
-    try:
-        with open("config/key.txt", 'r') as file:
-            for line in file:
-                line = line.strip()
-                if line.startswith("KEY="):
-                    return line.split("=", 1)[1].strip()
-        raise ValueError("No valid 'KEY=' entry found in the file.")
-    except FileNotFoundError:
-        raise FileNotFoundError(f"The file 'config/key.txt' does not exist.")
-
-
 # Function to extract AI name
 def get_name():
     with open("config/config.json", 'r') as file:
@@ -68,43 +55,70 @@ def get_file_paths():
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+#   Streamlit Setup
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Set page title and icon
+streamlit.set_page_config(page_title="PolterText", page_icon="https://i.imgur.com/LLSQfET.png")
+
+# Centering image
+streamlit.markdown("<div style='text-align: center;'><img src='https://i.imgur.com/y1gj32C.png' width='150'/></div>", unsafe_allow_html=True)
+
+# Centering title
+streamlit.markdown("<h1 style='text-align: center;'>{} The Ghost Expert</h1>".format(get_name()), unsafe_allow_html=True)
+
+# Some whitespace
+streamlit.write("")
+streamlit.write("")
+streamlit.write("")
+
+# API Key input
+openai_api_key = ""
+with streamlit.sidebar:
+    openai_api_key = streamlit.text_input("Encrypted Address:", type="password")
+    if not openai_api_key:
+        streamlit.info("Please add your OpenAI API key to continue.", icon="🗝️")
+
+# ---------------------------------------------------------------------------------------------------------------------
 #   Assistant Setup
 # ---------------------------------------------------------------------------------------------------------------------
 
-# Init client with api key
-client = OpenAI(
-    api_key = str(get_api_key())
-)
 
-# Init assistant with instructions, gpt model, and tools (function calls)
-phasmophobia_assistant = client.beta.assistants.create(
-    name="Phasmophobia Assistant",
-    instructions=str(get_instructions()),
-    model=get_gpt_model(),
-    tools=[
-        {
-            "type": "file_search"
-        }
-    ], 
-)
+if openai_api_key:
+    # Init client with api key
+    client = OpenAI(
+        api_key = openai_api_key
+    )
 
-vector_store = client.beta.vector_stores.create(name="Phasmophobia Data Vector Store")
+    # Init assistant with instructions, gpt model, and tools (function calls)
+    phasmophobia_assistant = client.beta.assistants.create(
+        name="Phasmophobia Assistant",
+        instructions=str(get_instructions()),
+        model=get_gpt_model(),
+        tools=[
+            {
+                "type": "file_search"
+            }
+        ], 
+    )
 
-file_paths = get_file_paths()
-file_streams = [open(path, "rb") for path in file_paths]
+    vector_store = client.beta.vector_stores.create(name="Phasmophobia Data Vector Store")
 
-file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
-    vector_store_id=vector_store.id,
-    files=file_streams
-)
+    file_paths = get_file_paths()
+    file_streams = [open(path, "rb") for path in file_paths]
 
-phasmophobia_assistant = client.beta.assistants.update(
-    assistant_id=phasmophobia_assistant.id,
-    tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
-)    
+    file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+        vector_store_id=vector_store.id,
+        files=file_streams
+    )
 
-# Init thread
-thread = client.beta.threads.create()
+    phasmophobia_assistant = client.beta.assistants.update(
+        assistant_id=phasmophobia_assistant.id,
+        tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
+    )    
+
+    # Init thread
+    thread = client.beta.threads.create()
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   EventHandler class to define how to handle the events in the response stream.
@@ -217,31 +231,6 @@ if 'chat_history' not in streamlit.session_state:
 if 'thread_id' not in streamlit.session_state:
     streamlit.session_state.thread_id = None
 
-
-# Set page title and icon
-streamlit.set_page_config(page_title="PolterText", page_icon="https://i.imgur.com/LLSQfET.png")
-
-# Centering image
-streamlit.markdown("<div style='text-align: center;'><img src='https://i.imgur.com/y1gj32C.png' width='150'/></div>", unsafe_allow_html=True)
-# Centering title
-streamlit.markdown("<h1 style='text-align: center;'>{} The Ghost Expert</h1>".format(get_name()), unsafe_allow_html=True)
-
-streamlit.write("")
-streamlit.write("")
-streamlit.write("")
-
-
-#with streamlit.sidebar:
-#    streamlit.logo("https://i.imgur.com/DZBjDji.png", size="large", icon_image="https://i.imgur.com/LLSQfET.png")
-#    streamlit.title("Contact List 📞")
-
-#    # Button that starts a new game
-#    contact1Button = streamlit.button(f"{get_name()} The Ghost Expert", icon="👻")
-#    if (contact1Button):
-#        streamlit.session_state.chat_history = []
-#        streamlit.session_state.thread_id = None
-
-
 # Display the conversation history
 for message in streamlit.session_state.chat_history:
     if isinstance(message, HumanMessage):
@@ -252,34 +241,35 @@ for message in streamlit.session_state.chat_history:
             streamlit.markdown(message.content)
 
 # Input prompt from the user
-user_prompt = streamlit.chat_input(f"Ask {get_name()} your Phasmophobia question:")
+if openai_api_key:
+    user_prompt = streamlit.chat_input(f"Message {get_name()}:")
 
-if user_prompt is not None and user_prompt != "":
+    if user_prompt is not None and user_prompt != "":
 
-    # Add user's input to the session history
-    streamlit.session_state.chat_history.append(HumanMessage(user_prompt))
+        # Add user's input to the session history
+        streamlit.session_state.chat_history.append(HumanMessage(user_prompt))
 
-    with streamlit.chat_message("Human"):
-        streamlit.markdown(user_prompt)
+        with streamlit.chat_message("Human"):
+            streamlit.markdown(user_prompt)
 
-    with streamlit.chat_message("AI", avatar="https://i.imgur.com/y1gj32C.png"):
+        with streamlit.chat_message("AI", avatar="https://i.imgur.com/y1gj32C.png"):
 
-        thinking_placeholder = streamlit.empty()
-        thinking_placeholder.markdown("***Typing...***")
+            thinking_placeholder = streamlit.empty()
+            thinking_placeholder.markdown("***Typing...***")
 
-        # Check if thread_id is None, if so create a new thread, else retrieve the thread
-        if streamlit.session_state.thread_id is None:
-            thread = client.beta.threads.create()
-            streamlit.session_state.thread_id = thread.id
-        else:
-            thread = client.beta.threads.retrieve(streamlit.session_state.thread_id)
+            # Check if thread_id is None, if so create a new thread, else retrieve the thread
+            if streamlit.session_state.thread_id is None:
+                thread = client.beta.threads.create()
+                streamlit.session_state.thread_id = thread.id
+            else:
+                thread = client.beta.threads.retrieve(streamlit.session_state.thread_id)
 
-        # Gets assistant response and removes any annotations
-        assistant_response = get_assistant_response(user_prompt)
-        assistant_response = re.sub(r"【.*?】", "", assistant_response)
+            # Gets assistant response and removes any annotations
+            assistant_response = get_assistant_response(user_prompt)
+            assistant_response = re.sub(r"【.*?】", "", assistant_response)
 
-        streamlit.markdown(assistant_response)
+            streamlit.markdown(assistant_response)
 
-        thinking_placeholder.empty()
+            thinking_placeholder.empty()
 
-    streamlit.session_state.chat_history.append(AIMessage(assistant_response))
+        streamlit.session_state.chat_history.append(AIMessage(assistant_response))
