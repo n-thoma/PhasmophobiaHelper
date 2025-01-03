@@ -135,11 +135,6 @@ class EventHandler(AssistantEventHandler):
             self.handle_requires_action(event.data, run_id)
 
 
-    #@override
-    #def on_message_delta(self, delta, message):
-        #streamlit.write(message.content[0].text.value)
-
-
     @override
     def on_tool_call_created(self, tool_call):
         print(f"\nassistant > {tool_call.type}\n", flush=True)
