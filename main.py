@@ -39,7 +39,8 @@ def get_gpt_model():
 def get_instructions():
     with open("config/config.json", 'r') as file:
         data = json.load(file)
-    return data.get("Assistant_Instructions")
+        response = re.sub(r"{name}", get_name(), data.get("Assistant_Instructions"))
+    return response
 
 # Function to extract filepaths for file_search tool
 def get_file_paths():
