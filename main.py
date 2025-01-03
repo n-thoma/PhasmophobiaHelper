@@ -3,15 +3,15 @@
 #   File:         main.py
 #   Author:       Nathaniel Thoma
 #   Description:  Functionality of a chatbot using OpenAI's Beta Assistants API that helps players with their
-#                 Phasmophobia experience.
+#                 Phasmophobia experience. Utilizes Streamlit for the user interface.
 #
-#   API Documentation Here:  https://platform.openai.com/docs/assistants/overview
-#   Phasmophobia:            https://store.steampowered.com/app/739630/Phasmophobia/
-#   Phasmophobia Wiki:       https://phasmophobia.fandom.com/wiki/Main_Page
+#   API Documentation Here:   https://platform.openai.com/docs/assistants/overview
+#   Phasmophobia:             https://store.steampowered.com/app/739630/Phasmophobia/
+#   Phasmophobia Wiki:        https://phasmophobia.fandom.com/wiki/Main_Page
+#   Streamlit Documentation:  https://docs.streamlit.io/
 #
 # ---------------------------------------------------------------------------------------------------------------------
 
-import streamlit.delta_generator
 from typing_extensions import override
 from openai import OpenAI, AssistantEventHandler
 from langchain_core.messages import HumanMessage, AIMessage
@@ -79,10 +79,10 @@ with streamlit.sidebar:
     if not openai_api_key:
         streamlit.info("Please add your OpenAI API key to continue.", icon="🗝️")
 
+
 # ---------------------------------------------------------------------------------------------------------------------
 #   Assistant Setup
 # ---------------------------------------------------------------------------------------------------------------------
-
 
 if openai_api_key:
     # Init client with api key
@@ -119,6 +119,7 @@ if openai_api_key:
 
     # Init thread
     thread = client.beta.threads.create()
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 #   EventHandler class to define how to handle the events in the response stream.
@@ -203,6 +204,8 @@ class EventHandler(AssistantEventHandler):
             print()
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+#   Streamlit Chatbot Interface  
 # ---------------------------------------------------------------------------------------------------------------------
 
 # Function to get assistant response
